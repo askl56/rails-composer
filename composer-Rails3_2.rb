@@ -81,7 +81,7 @@ module Gemfile
     end
 
     private
-    #returns {group=>[...gem names...]}, ie {[:development, :test]=>['rspec-rails', 'mocha'], :assets=>[], ...}
+    #returns {group=>[...gem names...]}, ie {[:development, :test]=>['rspec-rails', 'mocha'], assets:[], ...}
     def grouped_gem_names
       {}.tap do |_groups|
         @geminfo.each do |gem_name, geminfo|
@@ -97,7 +97,7 @@ def add_gem(*all) Gemfile.add(*all); end
 @prefs = {}
 @gems = []
 @diagnostics_recipes = [["example"], ["setup"], ["railsapps"], ["gems", "setup"], ["gems", "readme", "setup"], ["extras", "gems", "readme", "setup"], ["example", "git"], ["git", "setup"], ["git", "railsapps"], ["gems", "git", "setup"], ["gems", "git", "readme", "setup"], ["extras", "gems", "git", "readme", "setup"], ["controllers", "email", "extras", "frontend", "gems", "git", "init", "models", "railsapps", "readme", "routes", "setup", "testing", "views"], ["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "railsapps", "readme", "routes", "setup", "testing", "views"], ["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "setup", "testing", "views"], ["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "views"], ["controllers", "email", "example", "extras", "frontend", "gems", "git", "init", "models", "railsapps", "readme", "routes", "setup", "testing", "views"], ["controllers", "email", "example", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "setup", "testing", "views"], ["controllers", "email", "example", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "views"], ["apps4", "controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "views"], ["apps4", "controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "tests4", "views"], ["apps4", "controllers", "core", "deployment", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "views"], ["apps4", "controllers", "core", "deployment", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "tests4", "views"]]
-@diagnostics_prefs = [{:railsapps=>"rails-recurly-subscription-saas", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"cancan", :starter_app=>"admin_app", :form_builder=>"simple_form"}, {:railsapps=>"rails-stripe-membership-saas", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"cancan", :starter_app=>"admin_app", :form_builder=>"simple_form"}, {:railsapps=>"rails-stripe-membership-saas", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"mandrill", :authentication=>"devise", :devise_modules=>"confirmable", :authorization=>"cancan", :starter_app=>"admin_app", :form_builder=>"simple_form"}, {:railsapps=>"rails-prelaunch-signup", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"mandrill", :authentication=>"devise", :devise_modules=>"confirmable", :authorization=>"cancan", :starter_app=>"admin_app", :form_builder=>"simple_form"}, {:railsapps=>"rails3-bootstrap-devise-cancan", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"cancan", :starter_app=>"admin_app", :form_builder=>"simple_form"}, {:railsapps=>"rails3-bootstrap-devise-cancan", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"cancan", :starter_app=>"admin_app", :form_builder=>"simple_form", :local_env_file=>"figaro", :continuous_testing=>"none"}, {:railsapps=>"rails3-devise-rspec-cucumber", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"none", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"none", :starter_app=>"users_app", :form_builder=>"none"}, {:railsapps=>"rails3-mongoid-devise", :database=>"mongodb", :orm=>"mongoid", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"none", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"none", :starter_app=>"users_app", :form_builder=>"none"}, {:railsapps=>"rails3-mongoid-omniauth", :database=>"mongodb", :orm=>"mongoid", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"none", :email=>"none", :authentication=>"omniauth", :omniauth_provider=>"twitter", :authorization=>"none", :starter_app=>"users_app", :form_builder=>"none"}, {:railsapps=>"rails3-subdomains", :database=>"mongodb", :orm=>"mongoid", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"none", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"none", :starter_app=>"subdomains_app", :form_builder=>"none"}, {:railsapps=>"none", :database=>"sqlite", :unit_test=>"rspec", :integration=>"rspec-capybara", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"none", :authentication=>"omniauth", :omniauth_provider=>"twitter", :authorization=>"cancan", :form_builder=>"none", :starter_app=>"admin_app"}, {:railsapps=>"none", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"none", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"gmail", :authentication=>"devise", :devise_modules=>"invitable", :authorization=>"cancan", :form_builder=>"simple_form", :starter_app=>"admin_app"}, {:railsapps=>"none", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"cancan", :form_builder=>"none", :starter_app=>"admin_app"}, {:railsapps=>"none", :database=>"sqlite", :unit_test=>"test_unit", :integration=>"none", :fixtures=>"none", :frontend=>"bootstrap", :bootstrap=>"less", :email=>"sendgrid", :authentication=>"devise", :devise_modules=>"confirmable", :authorization=>"cancan", :form_builder=>"none", :starter_app=>"admin_app"}]
+@diagnostics_prefs = [{railsapps:"rails-recurly-subscription-saas", database:"sqlite", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"bootstrap", bootstrap:"sass", email:"gmail", authentication:"devise", devise_modules:"default", authorization:"cancan", starter_app:"admin_app", form_builder:"simple_form"}, {railsapps:"rails-stripe-membership-saas", database:"sqlite", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"bootstrap", bootstrap:"sass", email:"gmail", authentication:"devise", devise_modules:"default", authorization:"cancan", starter_app:"admin_app", form_builder:"simple_form"}, {railsapps:"rails-stripe-membership-saas", database:"sqlite", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"bootstrap", bootstrap:"sass", email:"mandrill", authentication:"devise", devise_modules:"confirmable", authorization:"cancan", starter_app:"admin_app", form_builder:"simple_form"}, {railsapps:"rails-prelaunch-signup", database:"sqlite", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"bootstrap", bootstrap:"sass", email:"mandrill", authentication:"devise", devise_modules:"confirmable", authorization:"cancan", starter_app:"admin_app", form_builder:"simple_form"}, {railsapps:"rails3-bootstrap-devise-cancan", database:"sqlite", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"bootstrap", bootstrap:"sass", email:"gmail", authentication:"devise", devise_modules:"default", authorization:"cancan", starter_app:"admin_app", form_builder:"simple_form"}, {railsapps:"rails3-bootstrap-devise-cancan", database:"sqlite", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"bootstrap", bootstrap:"sass", email:"gmail", authentication:"devise", devise_modules:"default", authorization:"cancan", starter_app:"admin_app", form_builder:"simple_form", local_env_file:"figaro", continuous_testing:"none"}, {railsapps:"rails3-devise-rspec-cucumber", database:"sqlite", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"none", email:"gmail", authentication:"devise", devise_modules:"default", authorization:"none", starter_app:"users_app", form_builder:"none"}, {railsapps:"rails3-mongoid-devise", database:"mongodb", orm:"mongoid", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"none", email:"gmail", authentication:"devise", devise_modules:"default", authorization:"none", starter_app:"users_app", form_builder:"none"}, {railsapps:"rails3-mongoid-omniauth", database:"mongodb", orm:"mongoid", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"none", email:"none", authentication:"omniauth", omniauth_provider:"twitter", authorization:"none", starter_app:"users_app", form_builder:"none"}, {railsapps:"rails3-subdomains", database:"mongodb", orm:"mongoid", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"none", email:"gmail", authentication:"devise", devise_modules:"default", authorization:"none", starter_app:"subdomains_app", form_builder:"none"}, {railsapps:"none", database:"sqlite", unit_test:"rspec", integration:"rspec-capybara", fixtures:"factory_girl", frontend:"bootstrap", bootstrap:"sass", email:"none", authentication:"omniauth", omniauth_provider:"twitter", authorization:"cancan", form_builder:"none", starter_app:"admin_app"}, {railsapps:"none", database:"sqlite", unit_test:"rspec", integration:"cucumber", fixtures:"none", frontend:"bootstrap", bootstrap:"sass", email:"gmail", authentication:"devise", devise_modules:"invitable", authorization:"cancan", form_builder:"simple_form", starter_app:"admin_app"}, {railsapps:"none", database:"sqlite", unit_test:"rspec", integration:"cucumber", fixtures:"factory_girl", frontend:"bootstrap", bootstrap:"sass", email:"gmail", authentication:"devise", devise_modules:"default", authorization:"cancan", form_builder:"none", starter_app:"admin_app"}, {railsapps:"none", database:"sqlite", unit_test:"test_unit", integration:"none", fixtures:"none", frontend:"bootstrap", bootstrap:"less", email:"sendgrid", authentication:"devise", devise_modules:"confirmable", authorization:"cancan", form_builder:"none", starter_app:"admin_app"}]
 diagnostics = {}
 
 # >-------------------------- templates/helpers.erb --------------------------start<
@@ -207,7 +207,7 @@ end
 def html_to_haml(source)
   begin
     html = open(source) {|input| input.binmode.read }
-    Haml::HTML.new(html, :erb => true, :xhtml => true).render
+    Haml::HTML.new(html, erb: true, xhtml: true).render
   rescue RubyParser::SyntaxError
     say_wizard "Ignoring RubyParser::SyntaxError"
     # special case to accommodate https://github.com/RailsApps/rails-composer/issues/55
@@ -216,7 +216,7 @@ def html_to_haml(source)
     say_wizard "applying patch" if html.include? 'card_year'
     html = html.gsub(/, {add_month_numbers: true}, {name: nil, id: "card_month"}/, '')
     html = html.gsub(/, {start_year: Date\.today\.year, end_year: Date\.today\.year\+10}, {name: nil, id: "card_year"}/, '')
-    result = Haml::HTML.new(html, :erb => true, :xhtml => true).render
+    result = Haml::HTML.new(html, erb: true, xhtml: true).render
     result = result.gsub(/select_month nil/, "select_month nil, {add_month_numbers: true}, {name: nil, id: \"card_month\"}")
     result = result.gsub(/select_year nil/, "select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: \"card_year\"}")
   end
@@ -224,7 +224,7 @@ end
 
 def html_to_slim(source)
   html = open(source) {|input| input.binmode.read }
-  haml = Haml::HTML.new(html, :erb => true, :xhtml => true).render
+  haml = Haml::HTML.new(html, erb: true, xhtml: true).render
   Haml2Slim.convert!(haml)
 end
 
@@ -285,7 +285,7 @@ end
 
 # >---------------------------[ Autoload Modules/Classes ]-----------------------------<
 
-inject_into_file 'config/application.rb', :after => 'config.autoload_paths += %W(#{config.root}/extras)' do <<-'RUBY'
+inject_into_file 'config/application.rb', after: 'config.autoload_paths += %W(#{config.root}/extras)' do <<-'RUBY'
 
     config.autoload_paths += %W(#{config.root}/lib)
 RUBY
@@ -326,8 +326,8 @@ prefs[:git] = true unless prefs.has_key? :git
 if prefer :git, true
   copy_from 'https://raw.github.com/RailsApps/rails-composer/master/files/gitignore.txt', '.gitignore'
   git :init
-  git :add => '-A'
-  git :commit => '-qm "rails_apps_composer: initial commit"'
+  git add: '-A'
+  git commit: '-qm "rails_apps_composer: initial commit"'
 else
   after_everything do
     say_wizard "removing .gitignore and .gitkeep files"
@@ -628,10 +628,10 @@ if prefer :apps4, 'learn-rails'
   add_gem 'gibbon'
   add_gem 'google_drive'
   gsub_file 'Gemfile', /gem 'sqlite3'\n/, ''
-  add_gem 'sqlite3', :group => :development
-  add_gem 'pg', :group => :production
-  add_gem 'thin', :group => :production
-  add_gem 'rails_12factor', :group => :production
+  add_gem 'sqlite3', group: :development
+  add_gem 'pg', group: :production
+  add_gem 'thin', group: :production
+  add_gem 'rails_12factor', group: :production
 
   after_everything do
 
@@ -639,36 +639,36 @@ if prefer :apps4, 'learn-rails'
 
     # >-------------------------------[ Models ]--------------------------------<
 
-    copy_from_repo 'app/models/contact.rb', :repo => repo
-    copy_from_repo 'app/models/visitor.rb', :repo => repo
+    copy_from_repo 'app/models/contact.rb', repo: repo
+    copy_from_repo 'app/models/visitor.rb', repo: repo
 
     # >-------------------------------[ Controllers ]--------------------------------<
 
-    copy_from_repo 'app/controllers/contacts_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/visitors_controller.rb', :repo => repo
+    copy_from_repo 'app/controllers/contacts_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/visitors_controller.rb', repo: repo
 
     # >-------------------------------[ Mailers ]--------------------------------<
 
     generate 'mailer UserMailer'
-    copy_from_repo 'app/mailers/user_mailer.rb', :repo => repo
+    copy_from_repo 'app/mailers/user_mailer.rb', repo: repo
 
     # >-------------------------------[ Views ]--------------------------------<
 
-    copy_from_repo 'app/views/contacts/new.html.erb', :repo => repo
-    copy_from_repo 'app/views/pages/about.html.erb', :repo => repo
-    copy_from_repo 'app/views/user_mailer/contact_email.html.erb', :repo => repo
-    copy_from_repo 'app/views/user_mailer/contact_email.text.erb', :repo => repo
-    copy_from_repo 'app/views/visitors/new.html.erb', :repo => repo
+    copy_from_repo 'app/views/contacts/new.html.erb', repo: repo
+    copy_from_repo 'app/views/pages/about.html.erb', repo: repo
+    copy_from_repo 'app/views/user_mailer/contact_email.html.erb', repo: repo
+    copy_from_repo 'app/views/user_mailer/contact_email.text.erb', repo: repo
+    copy_from_repo 'app/views/visitors/new.html.erb', repo: repo
     # create navigation links using the rails_layout gem
     generate 'layout:navigation -f'
 
     # >-------------------------------[ Routes ]--------------------------------<
 
-    copy_from_repo 'config/routes.rb', :repo => repo
+    copy_from_repo 'config/routes.rb', repo: repo
 
     # >-------------------------------[ Assets ]--------------------------------<
 
-    copy_from_repo 'app/assets/javascripts/segmentio.js', :repo => repo
+    copy_from_repo 'app/assets/javascripts/segmentio.js', repo: repo
 
   end
 end
@@ -780,11 +780,11 @@ if prefer :apps4, 'rails-omniauth'
 
     # >-------------------------------[ Models ]--------------------------------<
 
-    copy_from_repo 'app/models/user.rb', :repo => repo
+    copy_from_repo 'app/models/user.rb', repo: repo
 
     # >-------------------------------[ Routes ]--------------------------------<
 
-    copy_from_repo 'config/routes.rb', :repo => repo
+    copy_from_repo 'config/routes.rb', repo: repo
 
   end
 end
@@ -877,21 +877,21 @@ if prefer :apps4, 'rails-signup-download'
 
     # >-------------------------------[ Controllers ]--------------------------------<
 
-    copy_from_repo 'app/controllers/products_controller.rb', :repo => repo
+    copy_from_repo 'app/controllers/products_controller.rb', repo: repo
 
     # >-------------------------------[ Views ]--------------------------------<
 
-    copy_from_repo 'app/views/visitors/index.html.erb', :repo => repo
-    copy_from_repo 'app/views/products/product.pdf', :repo => repo
+    copy_from_repo 'app/views/visitors/index.html.erb', repo: repo
+    copy_from_repo 'app/views/products/product.pdf', repo: repo
 
     # >-------------------------------[ Routes ]--------------------------------<
 
-    copy_from_repo 'config/routes.rb', :repo => repo
+    copy_from_repo 'config/routes.rb', repo: repo
 
     # >-------------------------------[ Tests ]--------------------------------<
 
-    copy_from_repo 'spec/features/users/product_acquisition_spec.rb', :repo => repo
-    copy_from_repo 'spec/controllers/products_controller_spec.rb', :repo => repo
+    copy_from_repo 'spec/features/users/product_acquisition_spec.rb', repo: repo
+    copy_from_repo 'spec/controllers/products_controller_spec.rb', repo: repo
 
   end
 end
@@ -1135,7 +1135,7 @@ after_everything do
     gsub_file "README.md", /Gmail/, "SendGrid" if prefer :email, 'sendgrid'
     gsub_file "README.md", /Gmail/, "Mandrill" if prefer :email, 'mandrill'
     gsub_file "README.md", /Email delivery is disabled in development./, "Email delivery is configured via MailCatcher in development." if prefer :mailcatcher, true
-    insert_into_file 'README.md', "\nEmail rendering in development enabled via MailView.", :after => /Email delivery is.*\n/ if prefer :mail_view, true
+    insert_into_file 'README.md', "\nEmail rendering in development enabled via MailView.", after: /Email delivery is.*\n/ if prefer :mail_view, true
   else
     gsub_file "README.md", /Email/, ""
     gsub_file "README.md", /-----/, ""
@@ -1152,8 +1152,8 @@ after_everything do
   gsub_file "README.md", /Admin: None/, "Admin: ActiveAdmin" if prefer :admin, 'activeadmin'
   gsub_file "README.md", /Admin: None/, "Admin: RailsAdmin" if prefer :admin, 'rails_admin'
 
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: add README files"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: add README files"' if prefer :git, true
 
 end # after_everything
 # >---------------------------- recipes/readme.rb ----------------------------end<
@@ -1173,7 +1173,7 @@ say_recipe 'gems'
 ### GEMFILE ###
 
 ## Ruby on Rails
-insert_into_file('Gemfile', "ruby '#{RUBY_VERSION}'\n", :before => /^ *gem 'rails'/, :force => false)
+insert_into_file('Gemfile', "ruby '#{RUBY_VERSION}'\n", before: /^ *gem 'rails'/, force: false)
 
 ## Cleanup
 # remove the 'sdoc' gem
@@ -1190,15 +1190,15 @@ if (prefs[:dev_webserver] == prefs[:prod_webserver])
   add_gem 'puma' if prefer :dev_webserver, 'puma'
   add_gem 'passenger' if prefer :dev_webserver, 'passenger_standalone'
 else
-  add_gem 'thin', :group => [:development, :test] if prefer :dev_webserver, 'thin'
-  add_gem 'unicorn', :group => [:development, :test] if prefer :dev_webserver, 'unicorn'
-  add_gem 'unicorn-rails', :group => [:development, :test] if prefer :dev_webserver, 'unicorn'
-  add_gem 'puma', :group => [:development, :test] if prefer :dev_webserver, 'puma'
-  add_gem 'passenger', :group => [:development, :test] if prefer :dev_webserver, 'passenger_standalone'
-  add_gem 'thin', :group => :production if prefer :prod_webserver, 'thin'
-  add_gem 'unicorn', :group => :production if prefer :prod_webserver, 'unicorn'
-  add_gem 'puma', :group => :production if prefer :prod_webserver, 'puma'
-  add_gem 'passenger', :group => :production if prefer :prod_webserver, 'passenger_standalone'
+  add_gem 'thin', group: [:development, :test] if prefer :dev_webserver, 'thin'
+  add_gem 'unicorn', group: [:development, :test] if prefer :dev_webserver, 'unicorn'
+  add_gem 'unicorn-rails', group: [:development, :test] if prefer :dev_webserver, 'unicorn'
+  add_gem 'puma', group: [:development, :test] if prefer :dev_webserver, 'puma'
+  add_gem 'passenger', group: [:development, :test] if prefer :dev_webserver, 'passenger_standalone'
+  add_gem 'thin', group: :production if prefer :prod_webserver, 'thin'
+  add_gem 'unicorn', group: :production if prefer :prod_webserver, 'unicorn'
+  add_gem 'puma', group: :production if prefer :prod_webserver, 'puma'
+  add_gem 'passenger', group: :production if prefer :prod_webserver, 'passenger_standalone'
 end
 
 ## Rails 4.0 attr_accessible Compatibility
@@ -1221,81 +1221,81 @@ gsub_file 'Gemfile', /gem 'mysql2'.*/, ''
 add_gem 'mysql2' if prefer :database, 'mysql'
 
 ## Gem to set up controllers, views, and routing in the 'apps4' recipe
-add_gem 'rails_apps_pages', :group => :development if prefs[:apps4]
+add_gem 'rails_apps_pages', group: :development if prefs[:apps4]
 
 ## Template Engine
 if prefer :templates, 'haml'
   add_gem 'haml-rails'
-  add_gem 'html2haml', :group => :development
+  add_gem 'html2haml', group: :development
 end
 if prefer :templates, 'slim'
   add_gem 'slim-rails'
-  add_gem 'haml2slim', :group => :development
-  add_gem 'html2haml', :group => :development
+  add_gem 'haml2slim', group: :development
+  add_gem 'html2haml', group: :development
 end
 
 ## Testing Framework
 if rails_4_1?
   if prefer :tests, 'rspec'
-    add_gem 'rails_apps_testing', :group => :development
-    add_gem 'rspec-rails', :group => [:development, :test]
-    add_gem 'factory_girl_rails', :group => [:development, :test]
-    add_gem 'faker', :group => :test
-    add_gem 'capybara', :group => :test
-    add_gem 'database_cleaner', :group => :test
-    add_gem 'launchy', :group => :test
-    add_gem 'selenium-webdriver', :group => :test
+    add_gem 'rails_apps_testing', group: :development
+    add_gem 'rspec-rails', group: [:development, :test]
+    add_gem 'factory_girl_rails', group: [:development, :test]
+    add_gem 'faker', group: :test
+    add_gem 'capybara', group: :test
+    add_gem 'database_cleaner', group: :test
+    add_gem 'launchy', group: :test
+    add_gem 'selenium-webdriver', group: :test
     if prefer :continuous_testing, 'guard'
-      add_gem 'guard-bundler', :group => :development
-      add_gem 'guard-rails', :group => :development
-      add_gem 'guard-rspec', :group => :development
-      add_gem 'rb-inotify', :group => :development, :require => false
-      add_gem 'rb-fsevent', :group => :development, :require => false
-      add_gem 'rb-fchange', :group => :development, :require => false
+      add_gem 'guard-bundler', group: :development
+      add_gem 'guard-rails', group: :development
+      add_gem 'guard-rspec', group: :development
+      add_gem 'rb-inotify', group: :development, require: false
+      add_gem 'rb-fsevent', group: :development, require: false
+      add_gem 'rb-fchange', group: :development, require: false
     end
   end
 else
   if prefer :unit_test, 'rspec'
-    add_gem 'rspec-rails', :group => [:development, :test]
-    add_gem 'capybara', :group => :test if prefer :integration, 'rspec-capybara'
-    add_gem 'database_cleaner', '1.0.1', :group => :test
+    add_gem 'rspec-rails', group: [:development, :test]
+    add_gem 'capybara', group: :test if prefer :integration, 'rspec-capybara'
+    add_gem 'database_cleaner', '1.0.1', group: :test
     if prefer :orm, 'mongoid'
       if rails_4?
-        add_gem 'mongoid-rspec', '>= 1.10.0', :group => :test
+        add_gem 'mongoid-rspec', '>= 1.10.0', group: :test
       else
-        add_gem 'mongoid-rspec', :group => :test
+        add_gem 'mongoid-rspec', group: :test
       end
     end
-    add_gem 'email_spec', :group => :test
+    add_gem 'email_spec', group: :test
   end
   if prefer :unit_test, 'minitest'
-    add_gem 'minitest-spec-rails', :group => :test
-    add_gem 'minitest-wscolor', :group => :test
-    add_gem 'capybara', :group => :test if prefer :integration, 'minitest-capybara'
+    add_gem 'minitest-spec-rails', group: :test
+    add_gem 'minitest-wscolor', group: :test
+    add_gem 'capybara', group: :test if prefer :integration, 'minitest-capybara'
   end
   if prefer :integration, 'cucumber'
-    add_gem 'cucumber-rails', :group => :test, :require => false
-    add_gem 'database_cleaner', '1.0.1', :group => :test unless prefer :unit_test, 'rspec'
-    add_gem 'launchy', :group => :test
-    add_gem 'capybara', :group => :test
+    add_gem 'cucumber-rails', group: :test, require: false
+    add_gem 'database_cleaner', '1.0.1', group: :test unless prefer :unit_test, 'rspec'
+    add_gem 'launchy', group: :test
+    add_gem 'capybara', group: :test
   end
-  add_gem 'turnip', '>= 1.1.0', :group => :test if prefer :integration, 'turnip'
+  add_gem 'turnip', '>= 1.1.0', group: :test if prefer :integration, 'turnip'
   if prefer :continuous_testing, 'guard'
-    add_gem 'guard-bundler', :group => :development
-    add_gem 'guard-cucumber', :group => :development if prefer :integration, 'cucumber'
-    add_gem 'guard-rails', :group => :development
-    add_gem 'guard-rspec', :group => :development if prefer :unit_test, 'rspec'
-    add_gem 'rb-inotify', :group => :development, :require => false
-    add_gem 'rb-fsevent', :group => :development, :require => false
-    add_gem 'rb-fchange', :group => :development, :require => false
+    add_gem 'guard-bundler', group: :development
+    add_gem 'guard-cucumber', group: :development if prefer :integration, 'cucumber'
+    add_gem 'guard-rails', group: :development
+    add_gem 'guard-rspec', group: :development if prefer :unit_test, 'rspec'
+    add_gem 'rb-inotify', group: :development, require: false
+    add_gem 'rb-fsevent', group: :development, require: false
+    add_gem 'rb-fchange', group: :development, require: false
   end
-  add_gem 'factory_girl_rails', :group => [:development, :test] if prefer :fixtures, 'factory_girl'
-  add_gem 'fabrication', :group => [:development, :test] if prefer :fixtures, 'fabrication'
-  add_gem 'machinist', :group => :test if prefer :fixtures, 'machinist'
+  add_gem 'factory_girl_rails', group: [:development, :test] if prefer :fixtures, 'factory_girl'
+  add_gem 'fabrication', group: [:development, :test] if prefer :fixtures, 'fabrication'
+  add_gem 'machinist', group: :test if prefer :fixtures, 'machinist'
 end
 
 ## Front-end Framework
-add_gem 'rails_layout', :group => :development
+add_gem 'rails_layout', group: :development
 case prefs[:frontend]
   when 'bootstrap2'
     add_gem 'bootstrap-sass', '~> 2.3.2.2'
@@ -1306,8 +1306,8 @@ case prefs[:frontend]
       add_gem 'zurb-foundation', '~> 4.3.2'
       add_gem 'compass-rails', '~> 1.1.2'
     else
-      add_gem 'zurb-foundation', '~> 4.3.2', :group => assets_group
-      add_gem 'compass-rails', '~> 1.0.3', :group => assets_group
+      add_gem 'zurb-foundation', '~> 4.3.2', group: assets_group
+      add_gem 'compass-rails', '~> 1.0.3', group: assets_group
     end
   when 'foundation5'
     add_gem 'foundation-rails'
@@ -1355,7 +1355,7 @@ end
 ## Signup App
 if prefer :railsapps, 'rails-prelaunch-signup'
   add_gem 'gibbon'
-  add_gem 'capybara-webkit', :group => :test
+  add_gem 'capybara-webkit', group: :test
 end
 
 ## Gems from a defaults file or added interactively
@@ -1364,14 +1364,14 @@ gems.each do |g|
 end
 
 ## Git
-git :add => '-A' if prefer :git, true
-git :commit => '-qm "rails_apps_composer: Gemfile"' if prefer :git, true
+git add: '-A' if prefer :git, true
+git commit: '-qm "rails_apps_composer: Gemfile"' if prefer :git, true
 
 ### CREATE DATABASE ###
 after_bundler do
   unless prefer :database, 'default'
-    copy_from_repo 'config/database-postgresql.yml', :prefs => 'postgresql'
-    copy_from_repo 'config/database-mysql.yml', :prefs => 'mysql'
+    copy_from_repo 'config/database-postgresql.yml', prefs: 'postgresql'
+    copy_from_repo 'config/database-mysql.yml', prefs: 'mysql'
     generate 'mongoid:config' if prefer :orm, 'mongoid'
     remove_file 'config/database.yml' if prefer :orm, 'mongoid'
     if prefer :database, 'postgresql'
@@ -1424,8 +1424,8 @@ after_bundler do
     run 'bundle exec rake db:create:all' unless prefer :orm, 'mongoid'
     run 'bundle exec rake db:create' if prefer :orm, 'mongoid'
     ## Git
-    git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: create database"' if prefer :git, true
+    git add: '-A' if prefer :git, true
+    git commit: '-qm "rails_apps_composer: create database"' if prefer :git, true
   end
 end # after_bundler
 
@@ -1492,8 +1492,8 @@ FILE
     end
   end
   ## Git
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: generators"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: generators"' if prefer :git, true
 end # after_bundler
 # >----------------------------- recipes/gems.rb -----------------------------end<
 # >-------------------------- templates/recipe.erb ---------------------------end<
@@ -1513,7 +1513,7 @@ after_bundler do
   say_wizard "recipe running after 'bundle install'"
   ### TEST/UNIT ###
   if prefer :unit_test, 'test_unit'
-    inject_into_file 'config/application.rb', :after => "Rails::Application\n" do <<-RUBY
+    inject_into_file 'config/application.rb', after: "Rails::Application\n" do <<-RUBY
 
     config.generators do |g|
       #{"g.test_framework :test_unit, fixture_replacement: :fabrication" if prefer :fixtures, 'fabrication'}
@@ -1527,16 +1527,16 @@ RUBY
   if prefer :unit_test, 'rspec'
     say_wizard "recipe installing RSpec"
     generate 'rspec:install'
-    copy_from_repo 'spec/spec_helper.rb', :repo => 'https://raw.github.com/RailsApps/rails3-devise-rspec-cucumber/master/'
+    copy_from_repo 'spec/spec_helper.rb', repo: 'https://raw.github.com/RailsApps/rails3-devise-rspec-cucumber/master/'
     generate 'email_spec:steps' if prefer :integration, 'cucumber'
-    inject_into_file 'spec/spec_helper.rb', "require 'email_spec'\n", :after => "require 'rspec/rails'\n"
-    inject_into_file 'spec/spec_helper.rb', :after => "RSpec.configure do |config|\n" do <<-RUBY
+    inject_into_file 'spec/spec_helper.rb', "require 'email_spec'\n", after: "require 'rspec/rails'\n"
+    inject_into_file 'spec/spec_helper.rb', after: "RSpec.configure do |config|\n" do <<-RUBY
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
 RUBY
     end
     run 'rm -rf test/' # Removing test folder (not needed for RSpec)
-    inject_into_file 'config/application.rb', :after => "Rails::Application\n" do <<-RUBY
+    inject_into_file 'config/application.rb', after: "Rails::Application\n" do <<-RUBY
 
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
@@ -1574,7 +1574,7 @@ RUBY
       create_file 'spec/support/devise.rb' do
       <<-RUBY
 RSpec.configure do |config|
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::TestHelpers, type: :controller
 end
 RUBY
       end
@@ -1593,7 +1593,7 @@ RUBY
     ## CUCUMBER AND MONGOID
     if prefer :orm, 'mongoid'
       gsub_file 'features/support/env.rb', /transaction/, "truncation"
-      inject_into_file 'features/support/env.rb', :after => 'begin' do
+      inject_into_file 'features/support/env.rb', after: 'begin' do
         "\n  DatabaseCleaner.orm = 'mongoid'"
       end
     end
@@ -1602,7 +1602,7 @@ RUBY
   ## TURNIP
   if prefer :integration, 'turnip'
     append_file '.rspec', '-r turnip/rspec'
-    inject_into_file 'spec/spec_helper.rb', "require 'turnip/capybara'\n", :after => "require 'rspec/rails'\n"
+    inject_into_file 'spec/spec_helper.rb', "require 'turnip/capybara'\n", after: "require 'rspec/rails'\n"
     create_file 'spec/acceptance/steps/.gitkeep'
   end
   ## FIXTURE REPLACEMENTS
@@ -1616,8 +1616,8 @@ RUBY
     run 'bundle exec guard init'
   end
   ### GIT ###
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: testing framework"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: testing framework"' if prefer :git, true
 end # after_bundler
 
 after_everything do
@@ -1627,11 +1627,11 @@ after_everything do
     if (prefer :authentication, 'devise') && (prefer :starter_app, 'users_app')
       say_wizard "copying RSpec files from the rails3-devise-rspec-cucumber examples"
       repo = 'https://raw.github.com/RailsApps/rails3-devise-rspec-cucumber/master/'
-      copy_from_repo 'spec/factories/users.rb', :repo => repo
+      copy_from_repo 'spec/factories/users.rb', repo: repo
       gsub_file 'spec/factories/users.rb', /# confirmed_at/, "confirmed_at" if (prefer :devise_modules, 'confirmable') || (prefer :devise_modules, 'invitable')
-      copy_from_repo 'spec/controllers/home_controller_spec.rb', :repo => repo
-      copy_from_repo 'spec/controllers/users_controller_spec.rb', :repo => repo
-      copy_from_repo 'spec/models/user_spec.rb', :repo => repo
+      copy_from_repo 'spec/controllers/home_controller_spec.rb', repo: repo
+      copy_from_repo 'spec/controllers/users_controller_spec.rb', repo: repo
+      copy_from_repo 'spec/models/user_spec.rb', repo: repo
       remove_file 'spec/views/home/index.html.erb_spec.rb'
       remove_file 'spec/views/home/index.html.haml_spec.rb'
       remove_file 'spec/views/users/show.html.erb_spec.rb'
@@ -1642,11 +1642,11 @@ after_everything do
     if (prefer :authentication, 'devise') && (prefer :starter_app, 'admin_app')
       say_wizard "copying RSpec files from the rails3-bootstrap-devise-cancan examples"
       repo = 'https://raw.github.com/RailsApps/rails3-bootstrap-devise-cancan/master/'
-      copy_from_repo 'spec/factories/users.rb', :repo => repo
+      copy_from_repo 'spec/factories/users.rb', repo: repo
       gsub_file 'spec/factories/users.rb', /# confirmed_at/, "confirmed_at" if (prefer :devise_modules, 'confirmable') || (prefer :devise_modules, 'invitable')
-      copy_from_repo 'spec/controllers/home_controller_spec.rb', :repo => repo
-      copy_from_repo 'spec/controllers/users_controller_spec.rb', :repo => repo
-      copy_from_repo 'spec/models/user_spec.rb', :repo => repo
+      copy_from_repo 'spec/controllers/home_controller_spec.rb', repo: repo
+      copy_from_repo 'spec/controllers/users_controller_spec.rb', repo: repo
+      copy_from_repo 'spec/models/user_spec.rb', repo: repo
       remove_file 'spec/views/home/index.html.erb_spec.rb'
       remove_file 'spec/views/home/index.html.haml_spec.rb'
       remove_file 'spec/views/users/show.html.erb_spec.rb'
@@ -1658,24 +1658,24 @@ after_everything do
     if (prefer :authentication, 'omniauth') && (prefer :starter_app, 'users_app')
       say_wizard "copying RSpec files from the rails3-mongoid-omniauth examples"
       repo = 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
-      copy_from_repo 'spec/factories/users.rb', :repo => repo
-      copy_from_repo 'spec/controllers/sessions_controller_spec.rb', :repo => repo
-      copy_from_repo 'spec/controllers/home_controller_spec.rb', :repo => repo
-      copy_from_repo 'spec/controllers/users_controller_spec.rb', :repo => repo
-      copy_from_repo 'spec/models/user_spec.rb', :repo => repo
+      copy_from_repo 'spec/factories/users.rb', repo: repo
+      copy_from_repo 'spec/controllers/sessions_controller_spec.rb', repo: repo
+      copy_from_repo 'spec/controllers/home_controller_spec.rb', repo: repo
+      copy_from_repo 'spec/controllers/users_controller_spec.rb', repo: repo
+      copy_from_repo 'spec/models/user_spec.rb', repo: repo
     end
     ## SUBDOMAINS
     if (prefer :authentication, 'devise') && (prefer :starter_app, 'subdomains_app')
       say_wizard "copying RSpec files from the rails3-subdomains examples"
       repo = 'https://raw.github.com/RailsApps/rails3-subdomains/master/'
-      copy_from_repo 'spec/factories/users.rb', :repo => repo
-      copy_from_repo 'spec/controllers/home_controller_spec.rb', :repo => repo
-      copy_from_repo 'spec/controllers/users_controller_spec.rb', :repo => repo
-      copy_from_repo 'spec/models/user_spec.rb', :repo => repo
+      copy_from_repo 'spec/factories/users.rb', repo: repo
+      copy_from_repo 'spec/controllers/home_controller_spec.rb', repo: repo
+      copy_from_repo 'spec/controllers/users_controller_spec.rb', repo: repo
+      copy_from_repo 'spec/models/user_spec.rb', repo: repo
     end
     ## GIT
-    git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: rspec files"' if prefer :git, true
+    git add: '-A' if prefer :git, true
+    git commit: '-qm "rails_apps_composer: rspec files"' if prefer :git, true
   end
   ### CUCUMBER ###
   if prefer :integration, 'cucumber'
@@ -1683,17 +1683,17 @@ after_everything do
     if (prefer :authentication, 'devise') && (prefer :starter_app, 'users_app')
       say_wizard "copying Cucumber scenarios from the rails3-devise-rspec-cucumber examples"
       repo = 'https://raw.github.com/RailsApps/rails3-devise-rspec-cucumber/master/'
-      copy_from_repo 'spec/controllers/home_controller_spec.rb', :repo => repo
-      copy_from_repo 'features/users/sign_in.feature', :repo => repo
-      copy_from_repo 'features/users/sign_out.feature', :repo => repo
-      copy_from_repo 'features/users/sign_up.feature', :repo => repo
-      copy_from_repo 'features/users/user_edit.feature', :repo => repo
-      copy_from_repo 'features/users/user_show.feature', :repo => repo
-      copy_from_repo 'features/step_definitions/user_steps.rb', :repo => repo
-      copy_from_repo 'features/support/paths.rb', :repo => repo
+      copy_from_repo 'spec/controllers/home_controller_spec.rb', repo: repo
+      copy_from_repo 'features/users/sign_in.feature', repo: repo
+      copy_from_repo 'features/users/sign_out.feature', repo: repo
+      copy_from_repo 'features/users/sign_up.feature', repo: repo
+      copy_from_repo 'features/users/user_edit.feature', repo: repo
+      copy_from_repo 'features/users/user_show.feature', repo: repo
+      copy_from_repo 'features/step_definitions/user_steps.rb', repo: repo
+      copy_from_repo 'features/support/paths.rb', repo: repo
       if (prefer :devise_modules, 'confirmable') || (prefer :devise_modules, 'invitable')
         gsub_file 'features/step_definitions/user_steps.rb', /Welcome! You have signed up successfully./, "A message with a confirmation link has been sent to your email address."
-        inject_into_file 'features/users/sign_in.feature', :before => '    Scenario: User signs in successfully' do
+        inject_into_file 'features/users/sign_in.feature', before: '    Scenario: User signs in successfully' do
 <<-RUBY
   Scenario: User has not confirmed account
     Given I exist as an unconfirmed user
@@ -1709,17 +1709,17 @@ RUBY
     if (prefer :authentication, 'devise') && (prefer :starter_app, 'admin_app')
       say_wizard "copying Cucumber scenarios from the rails3-bootstrap-devise-cancan examples"
       repo = 'https://raw.github.com/RailsApps/rails3-bootstrap-devise-cancan/master/'
-      copy_from_repo 'spec/controllers/home_controller_spec.rb', :repo => repo
-      copy_from_repo 'features/users/sign_in.feature', :repo => repo
-      copy_from_repo 'features/users/sign_out.feature', :repo => repo
-      copy_from_repo 'features/users/sign_up.feature', :repo => repo
-      copy_from_repo 'features/users/user_edit.feature', :repo => repo
-      copy_from_repo 'features/users/user_show.feature', :repo => repo
-      copy_from_repo 'features/step_definitions/user_steps.rb', :repo => repo
-      copy_from_repo 'features/support/paths.rb', :repo => repo
+      copy_from_repo 'spec/controllers/home_controller_spec.rb', repo: repo
+      copy_from_repo 'features/users/sign_in.feature', repo: repo
+      copy_from_repo 'features/users/sign_out.feature', repo: repo
+      copy_from_repo 'features/users/sign_up.feature', repo: repo
+      copy_from_repo 'features/users/user_edit.feature', repo: repo
+      copy_from_repo 'features/users/user_show.feature', repo: repo
+      copy_from_repo 'features/step_definitions/user_steps.rb', repo: repo
+      copy_from_repo 'features/support/paths.rb', repo: repo
       if (prefer :devise_modules, 'confirmable') || (prefer :devise_modules, 'invitable')
         gsub_file 'features/step_definitions/user_steps.rb', /Welcome! You have signed up successfully./, "A message with a confirmation link has been sent to your email address."
-        inject_into_file 'features/users/sign_in.feature', :before => '    Scenario: User signs in successfully' do
+        inject_into_file 'features/users/sign_in.feature', before: '    Scenario: User signs in successfully' do
 <<-RUBY
   Scenario: User has not confirmed account
     Given I exist as an unconfirmed user
@@ -1735,17 +1735,17 @@ RUBY
     if (prefer :authentication, 'devise') && (prefer :starter_app, 'subdomains_app')
       say_wizard "copying RSpec files from the rails3-subdomains examples"
       repo = 'https://raw.github.com/RailsApps/rails3-subdomains/master/'
-      copy_from_repo 'features/users/sign_in.feature', :repo => repo
-      copy_from_repo 'features/users/sign_out.feature', :repo => repo
-      copy_from_repo 'features/users/sign_up.feature', :repo => repo
-      copy_from_repo 'features/users/user_edit.feature', :repo => repo
-      copy_from_repo 'features/users/user_show.feature', :repo => repo
-      copy_from_repo 'features/step_definitions/user_steps.rb', :repo => repo
-      copy_from_repo 'features/support/paths.rb', :repo => repo
+      copy_from_repo 'features/users/sign_in.feature', repo: repo
+      copy_from_repo 'features/users/sign_out.feature', repo: repo
+      copy_from_repo 'features/users/sign_up.feature', repo: repo
+      copy_from_repo 'features/users/user_edit.feature', repo: repo
+      copy_from_repo 'features/users/user_show.feature', repo: repo
+      copy_from_repo 'features/step_definitions/user_steps.rb', repo: repo
+      copy_from_repo 'features/support/paths.rb', repo: repo
     end
     ## GIT
-    git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: cucumber files"' if prefer :git, true
+    git add: '-A' if prefer :git, true
+    git commit: '-qm "rails_apps_composer: cucumber files"' if prefer :git, true
   end
   ### FABRICATION ###
   if prefer :fixtures, 'fabrication'
@@ -1799,8 +1799,8 @@ after_bundler do
     run 'bundle exec guard init'
   end
   ### GIT ###
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: testing framework"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: testing framework"' if prefer :git, true
 end # after_bundler
 
 after_everything do
@@ -1829,7 +1829,7 @@ after_bundler do
     if rails_4?
       dev_email_text = <<-TEXT
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
   # Send email in development mode?
@@ -1837,13 +1837,13 @@ after_bundler do
 TEXT
       prod_email_text = <<-TEXT
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { host: 'example.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
 TEXT
-      inject_into_file 'config/environments/development.rb', dev_email_text, :after => "config.assets.debug = true"
-      inject_into_file 'config/environments/production.rb', prod_email_text, :after => "config.active_support.deprecation = :notify"
+      inject_into_file 'config/environments/development.rb', dev_email_text, after: "config.assets.debug = true"
+      inject_into_file 'config/environments/production.rb', prod_email_text, after: "config.active_support.deprecation = :notify"
       gsub_file 'config/environments/production.rb', /'example.com'/, 'Rails.application.secrets.domain_name' if rails_4_1?
 
     else
@@ -1851,20 +1851,20 @@ TEXT
       gsub_file 'config/environments/development.rb', /# Don't care if the mailer can't send/, '# ActionMailer Config'
       gsub_file 'config/environments/development.rb', /config.action_mailer.raise_delivery_errors = false/ do
   <<-RUBY
-config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   # change to true to allow email to be sent during development
   config.action_mailer.perform_deliveries = false
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default charset: "utf-8"
 RUBY
       end
       ### TEST
-      inject_into_file 'config/environments/test.rb', :before => "\nend" do
+      inject_into_file 'config/environments/test.rb', before: "\nend" do
   <<-RUBY
 \n
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { host: 'example.com' }
 RUBY
       end
       ### PRODUCTION
@@ -1872,13 +1872,13 @@ RUBY
   <<-RUBY
 config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { host: 'example.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default charset: "utf-8"
 RUBY
       end
     end
@@ -1895,8 +1895,8 @@ RUBY
     password: Rails.application.secrets.email_provider_password
   }
 TEXT
-      inject_into_file 'config/environments/development.rb', email_configuration_text, :after => "config.assets.debug = true"
-      inject_into_file 'config/environments/production.rb', email_configuration_text, :after => "config.active_support.deprecation = :notify"
+      inject_into_file 'config/environments/development.rb', email_configuration_text, after: "config.assets.debug = true"
+      inject_into_file 'config/environments/production.rb', email_configuration_text, after: "config.active_support.deprecation = :notify"
       case :email
         when 'sendgrid'
           gsub_file 'config/environments/development.rb', /smtp.gmail.com/, 'smtp.sendgrid.net'
@@ -1922,8 +1922,8 @@ TEXT
     password: ENV["GMAIL_PASSWORD"]
   }
 TEXT
-        inject_into_file 'config/environments/development.rb', gmail_configuration_text, :after => "config.assets.debug = true"
-        inject_into_file 'config/environments/production.rb', gmail_configuration_text, :after => "config.active_support.deprecation = :notify"
+        inject_into_file 'config/environments/development.rb', gmail_configuration_text, after: "config.assets.debug = true"
+        inject_into_file 'config/environments/production.rb', gmail_configuration_text, after: "config.active_support.deprecation = :notify"
       end
       ### SENDGRID ACCOUNT
       if prefer :email, 'sendgrid'
@@ -1938,28 +1938,28 @@ TEXT
     password: ENV["SENDGRID_PASSWORD"]
   }
 TEXT
-        inject_into_file 'config/environments/development.rb', sendgrid_configuration_text, :after => "config.assets.debug = true"
-        inject_into_file 'config/environments/production.rb', sendgrid_configuration_text, :after => "config.active_support.deprecation = :notify"
+        inject_into_file 'config/environments/development.rb', sendgrid_configuration_text, after: "config.assets.debug = true"
+        inject_into_file 'config/environments/production.rb', sendgrid_configuration_text, after: "config.active_support.deprecation = :notify"
       end
       ### MANDRILL ACCOUNT
       if prefer :email, 'mandrill'
         mandrill_configuration_text = <<-TEXT
 \n
   config.action_mailer.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
-    :port      => 587,
-    :user_name => ENV["MANDRILL_USERNAME"],
-    :password  => ENV["MANDRILL_APIKEY"]
+    address: "smtp.mandrillapp.com",
+    port: 587,
+    user_name: ENV["MANDRILL_USERNAME"],
+    password: ENV["MANDRILL_APIKEY"]
   }
 TEXT
-        inject_into_file 'config/environments/development.rb', mandrill_configuration_text, :after => "config.assets.debug = true"
-        inject_into_file 'config/environments/production.rb', mandrill_configuration_text, :after => "config.active_support.deprecation = :notify"
+        inject_into_file 'config/environments/development.rb', mandrill_configuration_text, after: "config.assets.debug = true"
+        inject_into_file 'config/environments/production.rb', mandrill_configuration_text, after: "config.active_support.deprecation = :notify"
       end
     end
   end
   ### GIT
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: set email accounts"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: set email accounts"' if prefer :git, true
 end # after_bundler
 # >---------------------------- recipes/email.rb -----------------------------end<
 # >-------------------------- templates/recipe.erb ---------------------------end<
@@ -1988,7 +1988,7 @@ after_bundler do
     generate 'devise user' # create the User model
     if prefer :orm, 'mongoid'
       ## DEVISE AND MONGOID
-      copy_from_repo 'app/models/user.rb', :repo => 'https://raw.github.com/RailsApps/rails3-mongoid-devise/master/' unless rails_4?
+      copy_from_repo 'app/models/user.rb', repo: 'https://raw.github.com/RailsApps/rails3-mongoid-devise/master/' unless rails_4?
       if (prefer :devise_modules, 'confirmable') || (prefer :devise_modules, 'invitable')
         gsub_file 'app/models/user.rb', /:registerable,/, ":registerable, :confirmable,"
         gsub_file 'app/models/user.rb', /# field :confirmation_token/, "field :confirmation_token"
@@ -2000,12 +2000,12 @@ after_bundler do
         gsub_file 'app/models/user.rb', /\bend\s*\Z/ do
   <<-RUBY
   #invitable
-  field :invitation_token, :type => String
-  field :invitation_sent_at, :type => Time
-  field :invitation_accepted_at, :type => Time
-  field :invitation_limit, :type => Integer
-  field :invited_by_id, :type => String
-  field :invited_by_type, :type => String
+  field :invitation_token, type: String
+  field :invitation_sent_at, type: Time
+  field :invitation_accepted_at, type: Time
+  field :invitation_limit, type: Integer
+  field :invited_by_id, type: String
+  field :invited_by_type, type: String
 end
 RUBY
         end
@@ -2015,7 +2015,7 @@ RUBY
       unless prefer :railsapps, 'rails-recurly-subscription-saas'
         generate 'migration AddNameToUsers name:string'
       end
-      copy_from_repo 'app/models/user.rb', :repo => 'https://raw.github.com/RailsApps/rails3-devise-rspec-cucumber/master/' unless rails_4?
+      copy_from_repo 'app/models/user.rb', repo: 'https://raw.github.com/RailsApps/rails3-devise-rspec-cucumber/master/' unless rails_4?
       if (prefer :devise_modules, 'confirmable') || (prefer :devise_modules, 'invitable')
         gsub_file 'app/models/user.rb', /:registerable,/, ":registerable, :confirmable,"
         generate 'migration AddConfirmableToUsers confirmation_token:string confirmed_at:datetime confirmation_sent_at:datetime unconfirmed_email:string'
@@ -2032,25 +2032,25 @@ RUBY
   ### OMNIAUTH ###
   if prefer :authentication, 'omniauth'
     if rails_4_1?
-      copy_from_repo 'config/initializers/omniauth.rb', :repo => 'https://raw.github.com/RailsApps/rails-omniauth/master/'
+      copy_from_repo 'config/initializers/omniauth.rb', repo: 'https://raw.github.com/RailsApps/rails-omniauth/master/'
     else
-      copy_from_repo 'config/initializers/omniauth.rb', :repo => 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
+      copy_from_repo 'config/initializers/omniauth.rb', repo: 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
     end
     gsub_file 'config/initializers/omniauth.rb', /twitter/, prefs[:omniauth_provider] unless prefer :omniauth_provider, 'twitter'
     if prefer :orm, 'mongoid'
-      copy_from_repo 'app/models/user.rb', :repo => 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
+      copy_from_repo 'app/models/user.rb', repo: 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
     else
       generate 'model User name:string email:string provider:string uid:string'
       run 'bundle exec rake db:migrate'
-      copy_from_repo 'app/models/user.rb', :repo => 'https://raw.github.com/RailsApps/rails-omniauth/master/'
+      copy_from_repo 'app/models/user.rb', repo: 'https://raw.github.com/RailsApps/rails-omniauth/master/'
     end
   end
   ### SUBDOMAINS ###
-  copy_from_repo 'app/models/user.rb', :repo => 'https://raw.github.com/RailsApps/rails3-subdomains/master/' if prefer :starter_app, 'subdomains_app'
+  copy_from_repo 'app/models/user.rb', repo: 'https://raw.github.com/RailsApps/rails3-subdomains/master/' if prefer :starter_app, 'subdomains_app'
   ### AUTHORIZATION ###
   if prefer :authorization, 'pundit'
     generate 'migration AddRoleToUsers role:integer'
-    copy_from_repo 'app/models/user.rb', :repo => 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
+    copy_from_repo 'app/models/user.rb', repo: 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
     if (prefer :devise_modules, 'confirmable') || (prefer :devise_modules, 'invitable')
       gsub_file 'app/models/user.rb', /:registerable,/, ":registerable, :confirmable,"
       generate 'migration AddConfirmableToUsers confirmation_token:string confirmed_at:datetime confirmation_sent_at:datetime unconfirmed_email:string'
@@ -2060,9 +2060,9 @@ RUBY
     generate 'cancan:ability'
     if prefer :starter_app, 'admin_app'
       # Limit access to the users#index page
-      copy_from_repo 'app/models/ability.rb', :repo => 'https://raw.github.com/RailsApps/rails3-bootstrap-devise-cancan/master/'
+      copy_from_repo 'app/models/ability.rb', repo: 'https://raw.github.com/RailsApps/rails3-bootstrap-devise-cancan/master/'
       # allow an admin to update roles
-      insert_into_file 'app/models/user.rb', "  attr_accessible :role_ids, :as => :admin\n", :before => "  attr_accessible"
+      insert_into_file 'app/models/user.rb', "  attr_accessible :role_ids, as: :admin\n", before: "  attr_accessible"
     end
     unless prefer :orm, 'mongoid'
       generate 'rolify Role User'
@@ -2071,8 +2071,8 @@ RUBY
     end
   end
   ### GIT ###
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: models"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: models"' if prefer :git, true
 end # after_bundler
 # >---------------------------- recipes/models.rb ----------------------------end<
 # >-------------------------- templates/recipe.erb ---------------------------end<
@@ -2092,16 +2092,16 @@ after_bundler do
   say_wizard "recipe running after 'bundle install'"
   ### APPLICATION_CONTROLLER ###
   if prefer :authentication, 'omniauth'
-    copy_from_repo 'app/controllers/application_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails-omniauth/master/'
+    copy_from_repo 'app/controllers/application_controller.rb', repo: 'https://raw.github.com/RailsApps/rails-omniauth/master/'
   end
   if prefer :authorization, 'pundit'
-    copy_from_repo 'app/controllers/application_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
+    copy_from_repo 'app/controllers/application_controller.rb', repo: 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
   end
   if prefer :authorization, 'cancan'
-    inject_into_file 'app/controllers/application_controller.rb', :before => "\nend" do <<-RUBY
+    inject_into_file 'app/controllers/application_controller.rb', before: "\nend" do <<-RUBY
 \n
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_path, :alert => exception.message
+    redirect_to root_path, alert: exception.message
   end
 RUBY
     end
@@ -2114,52 +2114,52 @@ RUBY
   case prefs[:starter_app]
     when 'users_app'
       if (prefer :authentication, 'devise') and (not prefer :apps4, 'rails-devise')
-        copy_from_repo 'app/controllers/users_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails3-devise-rspec-cucumber/master/'
+        copy_from_repo 'app/controllers/users_controller.rb', repo: 'https://raw.github.com/RailsApps/rails3-devise-rspec-cucumber/master/'
       elsif prefer :authentication, 'omniauth'
         if rails_4?
-          copy_from_repo 'app/controllers/users_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails-omniauth/master/'
+          copy_from_repo 'app/controllers/users_controller.rb', repo: 'https://raw.github.com/RailsApps/rails-omniauth/master/'
         else
-          copy_from_repo 'app/controllers/users_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
+          copy_from_repo 'app/controllers/users_controller.rb', repo: 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
         end
       end
     when 'admin_app'
       if (prefer :authentication, 'devise') and (not prefer :apps4, 'rails-devise')
-        copy_from_repo 'app/controllers/users_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails3-bootstrap-devise-cancan/master/'
+        copy_from_repo 'app/controllers/users_controller.rb', repo: 'https://raw.github.com/RailsApps/rails3-bootstrap-devise-cancan/master/'
       elsif prefer :authentication, 'omniauth'
         if rails_4?
-          copy_from_repo 'app/controllers/users_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails-omniauth/master/'
+          copy_from_repo 'app/controllers/users_controller.rb', repo: 'https://raw.github.com/RailsApps/rails-omniauth/master/'
         else
-          copy_from_repo 'app/controllers/users_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
+          copy_from_repo 'app/controllers/users_controller.rb', repo: 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
         end
       end
       if prefer :authorization, 'pundit'
-        copy_from_repo 'app/controllers/users_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
-        copy_from_repo 'app/policies/user_policy.rb', :repo => 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
+        copy_from_repo 'app/controllers/users_controller.rb', repo: 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
+        copy_from_repo 'app/policies/user_policy.rb', repo: 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
       end
     when 'subdomains_app'
-      copy_from_repo 'app/controllers/users_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails3-subdomains/master/'
+      copy_from_repo 'app/controllers/users_controller.rb', repo: 'https://raw.github.com/RailsApps/rails3-subdomains/master/'
   end
   ### REGISTRATIONS_CONTROLLER ###
   if rails_4?
     if ['users_app','admin_app','subdomains_app'].include? prefs[:starter_app]
       ## accommodate strong parameters in Rails 4
-      copy_from_repo 'app/controllers/registrations_controller-devise.rb', :prefs => 'devise'
+      copy_from_repo 'app/controllers/registrations_controller-devise.rb', prefs: 'devise'
     end
   end
   ### SESSIONS_CONTROLLER ###
   if prefer :authentication, 'omniauth'
     filename = 'app/controllers/sessions_controller.rb'
-    copy_from_repo filename, :repo => 'https://raw.github.com/RailsApps/rails-omniauth/master/'
+    copy_from_repo filename, repo: 'https://raw.github.com/RailsApps/rails-omniauth/master/'
     gsub_file filename, /twitter/, prefs[:omniauth_provider] unless prefer :omniauth_provider, 'twitter'
     if prefer :authorization, 'cancan'
-      inject_into_file filename, "    user.add_role :admin if User.count == 1 # make the first user an admin\n", :after => "session[:user_id] = user.id\n"
+      inject_into_file filename, "    user.add_role :admin if User.count == 1 # make the first user an admin\n", after: "session[:user_id] = user.id\n"
     end
   end
   ### PROFILES_CONTROLLER ###
-  copy_from_repo 'app/controllers/profiles_controller.rb', :repo => 'https://raw.github.com/RailsApps/rails3-subdomains/master/' if prefer :starter_app, 'subdomains_app'
+  copy_from_repo 'app/controllers/profiles_controller.rb', repo: 'https://raw.github.com/RailsApps/rails3-subdomains/master/' if prefer :starter_app, 'subdomains_app'
   ### GIT ###
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: controllers"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: controllers"' if prefer :git, true
 end # after_bundler
 # >------------------------- recipes/controllers.rb --------------------------end<
 # >-------------------------- templates/recipe.erb ---------------------------end<
@@ -2184,48 +2184,48 @@ after_bundler do
       copy_from_repo 'app/views/devise/registrations/edit.html.erb'
       copy_from_repo 'app/views/devise/registrations/new.html.erb'
     else
-      copy_from_repo 'app/views/devise/registrations/edit-simple_form.html.erb', :prefs => 'simple_form'
-      copy_from_repo 'app/views/devise/registrations/new-simple_form.html.erb', :prefs => 'simple_form'
-      copy_from_repo 'app/views/devise/sessions/new-simple_form.html.erb', :prefs => 'simple_form'
-      copy_from_repo 'app/helpers/application_helper-simple_form.rb', :prefs => 'simple_form'
+      copy_from_repo 'app/views/devise/registrations/edit-simple_form.html.erb', prefs: 'simple_form'
+      copy_from_repo 'app/views/devise/registrations/new-simple_form.html.erb', prefs: 'simple_form'
+      copy_from_repo 'app/views/devise/sessions/new-simple_form.html.erb', prefs: 'simple_form'
+      copy_from_repo 'app/helpers/application_helper-simple_form.rb', prefs: 'simple_form'
     end
   end
   ### HOME ###
   copy_from_repo 'app/views/home/index.html.erb' if prefer :starter_app, 'users_app'
   copy_from_repo 'app/views/home/index.html.erb' if prefer :starter_app, 'admin_app'
-  copy_from_repo 'app/views/home/index-subdomains_app.html.erb', :prefs => 'subdomains_app'
+  copy_from_repo 'app/views/home/index-subdomains_app.html.erb', prefs: 'subdomains_app'
   ### USERS ###
   if ['users_app','admin_app','subdomains_app'].include? prefs[:starter_app]
     ## INDEX
     if prefer :starter_app, 'admin_app'
-      copy_from_repo 'app/views/users/index-admin_app.html.erb', :prefs => 'admin_app'
+      copy_from_repo 'app/views/users/index-admin_app.html.erb', prefs: 'admin_app'
       unless prefer :form_builder, 'simple_form'
         copy_from_repo 'app/views/users/_user.html.erb'
       else
-        copy_from_repo 'app/views/users/_user-simple_form.html.erb', :prefs => 'simple_form'
+        copy_from_repo 'app/views/users/_user-simple_form.html.erb', prefs: 'simple_form'
       end
     else
       copy_from_repo 'app/views/users/index.html.erb'
     end
     ## SHOW
     copy_from_repo 'app/views/users/show.html.erb'
-    copy_from_repo 'app/views/users/show-subdomains_app.html.erb', :prefs => 'subdomains_app'
+    copy_from_repo 'app/views/users/show-subdomains_app.html.erb', prefs: 'subdomains_app'
     ## EDIT
     if prefer :authentication, 'omniauth'
-      copy_from_repo 'app/views/users/edit.html.erb', :repo => 'https://raw.github.com/RailsApps/rails-omniauth/master/'
+      copy_from_repo 'app/views/users/edit.html.erb', repo: 'https://raw.github.com/RailsApps/rails-omniauth/master/'
     end
   end
   if (prefer :authorization, 'pundit') and  (prefer :starter_app, 'admin_app')
     repo = 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
-    copy_from_repo 'app/views/users/_user.html.erb', :repo => repo
-    copy_from_repo 'app/views/users/index.html.erb', :repo => repo
-    copy_from_repo 'app/views/users/show.html.erb', :repo => repo
+    copy_from_repo 'app/views/users/_user.html.erb', repo: repo
+    copy_from_repo 'app/views/users/index.html.erb', repo: repo
+    copy_from_repo 'app/views/users/show.html.erb', repo: repo
   end
   ### PROFILES ###
-  copy_from_repo 'app/views/profiles/show-subdomains_app.html.erb', :prefs => 'subdomains_app'
+  copy_from_repo 'app/views/profiles/show-subdomains_app.html.erb', prefs: 'subdomains_app'
   ### GIT ###
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: views"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: views"' if prefer :git, true
 end # after_bundler
 # >---------------------------- recipes/views.rb -----------------------------end<
 # >-------------------------- templates/recipe.erb ---------------------------end<
@@ -2246,30 +2246,30 @@ after_bundler do
   ### HOME ###
   if prefer :starter_app, 'home_app'
     remove_file 'public/index.html'
-    gsub_file 'config/routes.rb', /get \"home\/index\"/, 'root :to => "home#index"'
+    gsub_file 'config/routes.rb', /get \"home\/index\"/, 'root to: "home#index"'
   end
   ### USER_ACCOUNTS ###
   if ['users_app','admin_app'].include? prefs[:starter_app]
     ## DEVISE
     if (prefer :authentication, 'devise') and (not prefer :apps4, 'rails-devise')
-      copy_from_repo 'config/routes.rb', :repo => 'https://raw.github.com/RailsApps/rails3-devise-rspec-cucumber/master/'
+      copy_from_repo 'config/routes.rb', repo: 'https://raw.github.com/RailsApps/rails3-devise-rspec-cucumber/master/'
       ## Rails 4.0 doesn't allow two 'root' routes
       gsub_file 'config/routes.rb', /authenticated :user do\n.*\n.*\n  /, '' if rails_4?
       ## accommodate strong parameters in Rails 4
-      gsub_file 'config/routes.rb', /devise_for :users/, 'devise_for :users, :controllers => {:registrations => "registrations"}' if rails_4?
+      gsub_file 'config/routes.rb', /devise_for :users/, 'devise_for :users, controllers: {registrations: "registrations"}' if rails_4?
     end
     ## OMNIAUTH
     if prefer :authentication, 'omniauth'
       if rails_4?
-        copy_from_repo 'config/routes.rb', :repo => 'https://raw.github.com/RailsApps/rails-omniauth/master/'
+        copy_from_repo 'config/routes.rb', repo: 'https://raw.github.com/RailsApps/rails-omniauth/master/'
       else
-        copy_from_repo 'config/routes.rb', :repo => 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
+        copy_from_repo 'config/routes.rb', repo: 'https://raw.github.com/RailsApps/rails3-mongoid-omniauth/master/'
       end
     end
   end
   ### SUBDOMAINS ###
-  copy_from_repo 'lib/subdomain.rb', :repo => 'https://raw.github.com/RailsApps/rails3-subdomains/master/' if prefer :starter_app, 'subdomains_app'
-  copy_from_repo 'config/routes.rb', :repo => 'https://raw.github.com/RailsApps/rails3-subdomains/master/' if prefer :starter_app, 'subdomains_app'
+  copy_from_repo 'lib/subdomain.rb', repo: 'https://raw.github.com/RailsApps/rails3-subdomains/master/' if prefer :starter_app, 'subdomains_app'
+  copy_from_repo 'config/routes.rb', repo: 'https://raw.github.com/RailsApps/rails3-subdomains/master/' if prefer :starter_app, 'subdomains_app'
   if rails_4_1?
     # replaces application name copied from rails3-devise-rspec-cucumber repo
     gsub_file 'config/routes.rb', /^.*.routes.draw do/, "Rails.application.routes.draw do"
@@ -2278,8 +2278,8 @@ after_bundler do
     gsub_file 'config/routes.rb', /^.*.routes.draw do/, "#{app_const}.routes.draw do"
   end
   ### GIT ###
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: routes"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: routes"' if prefer :git, true
 end # after_bundler
 # >---------------------------- recipes/routes.rb ----------------------------end<
 # >-------------------------- templates/recipe.erb ---------------------------end<
@@ -2312,8 +2312,8 @@ after_bundler do
   end
 
   ### GIT ###
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: front-end framework"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: front-end framework"' if prefer :git, true
 end # after_bundler
 # >--------------------------- recipes/frontend.rb ---------------------------end<
 # >-------------------------- templates/recipe.erb ---------------------------end<
@@ -2334,9 +2334,9 @@ after_everything do
   if (!prefs[:secrets].nil?) and rails_4_1?
     prefs[:secrets].each do |secret|
       env_var = "  #{secret}: <%= ENV[\"#{secret.upcase}\"] %>"
-      inject_into_file 'config/secrets.yml', "\n" + env_var, :after => "development:"
+      inject_into_file 'config/secrets.yml', "\n" + env_var, after: "development:"
       ### 'inject_into_file' doesn't let us inject the same text twice unless we append the extra space, why?
-      inject_into_file 'config/secrets.yml', "\n" + env_var + " ", :after => "production:"
+      inject_into_file 'config/secrets.yml', "\n" + env_var + " ", after: "production:"
     end
   end
   case prefs[:email]
@@ -2366,42 +2366,42 @@ after_everything do
   foreman_cancan = "ROLES=[admin, user, VIP]\n\n"
   figaro_cancan = foreman_cancan.gsub('=', ': ')
   ## EMAIL
-  inject_into_file 'config/secrets.yml', "\n" + "  domain_name: example.com", :after => "development:" if rails_4_1?
-  inject_into_file 'config/secrets.yml', "\n" + "  domain_name: <%= ENV[\"DOMAIN_NAME\"] %>", :after => "production:" if rails_4_1?
-  inject_into_file 'config/secrets.yml', "\n" + secrets_email, :after => "development:" if rails_4_1?
+  inject_into_file 'config/secrets.yml', "\n" + "  domain_name: example.com", after: "development:" if rails_4_1?
+  inject_into_file 'config/secrets.yml', "\n" + "  domain_name: <%= ENV[\"DOMAIN_NAME\"] %>", after: "production:" if rails_4_1?
+  inject_into_file 'config/secrets.yml', "\n" + secrets_email, after: "development:" if rails_4_1?
   unless prefer :email, 'none'
     ### 'inject_into_file' doesn't let us inject the same text twice unless we append the extra space, why?
-    inject_into_file 'config/secrets.yml', "\n" + secrets_email + " ", :after => "production:" if rails_4_1?
+    inject_into_file 'config/secrets.yml', "\n" + secrets_email + " ", after: "production:" if rails_4_1?
     append_file '.env', foreman_email if prefer :local_env_file, 'foreman'
     append_file 'config/application.yml', figaro_email if prefer :local_env_file, 'figaro'
   end
   ## DEVISE
   if prefer :authentication, 'devise'
-    inject_into_file 'config/secrets.yml', "\n" + '  domain_name: example.com' + " ", :after => "test:" if rails_4_1?
-    inject_into_file 'config/secrets.yml', "\n" + secrets_d_devise, :after => "development:" if rails_4_1?
-    inject_into_file 'config/secrets.yml', "\n" + secrets_p_devise, :after => "production:" if rails_4_1?
+    inject_into_file 'config/secrets.yml', "\n" + '  domain_name: example.com' + " ", after: "test:" if rails_4_1?
+    inject_into_file 'config/secrets.yml', "\n" + secrets_d_devise, after: "development:" if rails_4_1?
+    inject_into_file 'config/secrets.yml', "\n" + secrets_p_devise, after: "production:" if rails_4_1?
     append_file '.env', foreman_devise if prefer :local_env_file, 'foreman'
     append_file 'config/application.yml', figaro_devise if prefer :local_env_file, 'figaro'
     gsub_file 'config/initializers/devise.rb', /'please-change-me-at-config-initializers-devise@example.com'/, "'no-reply@' + Rails.application.secrets.domain_name"
   end
   ## OMNIAUTH
   if prefer :authentication, 'omniauth'
-    inject_into_file 'config/secrets.yml', "\n" + secrets_omniauth, :after => "development:" if rails_4_1?
+    inject_into_file 'config/secrets.yml', "\n" + secrets_omniauth, after: "development:" if rails_4_1?
     ### 'inject_into_file' doesn't let us inject the same text twice unless we append the extra space, why?
-    inject_into_file 'config/secrets.yml', "\n" + secrets_omniauth + " ", :after => "production:" if rails_4_1?
+    inject_into_file 'config/secrets.yml', "\n" + secrets_omniauth + " ", after: "production:" if rails_4_1?
     append_file '.env', foreman_omniauth if prefer :local_env_file, 'foreman'
     append_file 'config/application.yml', figaro_omniauth if prefer :local_env_file, 'figaro'
   end
   ## CANCAN
   if (prefer :authorization, 'cancan')
-    inject_into_file 'config/secrets.yml', "\n" + secrets_cancan, :after => "development:" if rails_4_1?
+    inject_into_file 'config/secrets.yml', "\n" + secrets_cancan, after: "development:" if rails_4_1?
     ### 'inject_into_file' doesn't let us inject the same text twice unless we append the extra space, why?
-    inject_into_file 'config/secrets.yml', "\n" + secrets_cancan + " ", :after => "production:" if rails_4_1?
+    inject_into_file 'config/secrets.yml', "\n" + secrets_cancan + " ", after: "production:" if rails_4_1?
     append_file '.env', foreman_cancan if prefer :local_env_file, 'foreman'
     append_file 'config/application.yml', figaro_cancan if prefer :local_env_file, 'figaro'
   end
   ### SUBDOMAINS (FIGARO ONLY) ###
-  copy_from_repo 'config/application.yml', :repo => 'https://raw.github.com/RailsApps/rails3-subdomains/master/' if prefer :starter_app, 'subdomains_app'
+  copy_from_repo 'config/application.yml', repo: 'https://raw.github.com/RailsApps/rails3-subdomains/master/' if prefer :starter_app, 'subdomains_app'
   ### EXAMPLE FILE FOR FOREMAN AND FIGARO ###
   if prefer :local_env_file, 'figaro'
     copy_file destination_root + '/config/application.yml', destination_root + '/config/application.example.yml'
@@ -2410,13 +2410,13 @@ after_everything do
   end
   ### DATABASE SEED ###
   if (prefer :authentication, 'devise') and (rails_4_1?)
-    copy_from_repo 'db/seeds.rb', :repo => 'https://raw.github.com/RailsApps/rails-devise/master/'
+    copy_from_repo 'db/seeds.rb', repo: 'https://raw.github.com/RailsApps/rails-devise/master/'
     unless prefer :authorization, 'pundit'
-      copy_from_repo 'app/services/create_admin_service.rb', :repo => 'https://raw.github.com/RailsApps/rails-devise/master/'
+      copy_from_repo 'app/services/create_admin_service.rb', repo: 'https://raw.github.com/RailsApps/rails-devise/master/'
     end
   end
   if prefer :authorization, 'pundit'
-    copy_from_repo 'app/services/create_admin_service.rb', :repo => 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
+    copy_from_repo 'app/services/create_admin_service.rb', repo: 'https://raw.github.com/RailsApps/rails-devise-pundit/master/'
   end
   if prefer :local_env_file, 'figaro'
     append_file 'db/seeds.rb' do <<-FILE
@@ -2435,18 +2435,18 @@ FILE
       append_file 'db/seeds.rb' do <<-FILE
 puts 'ROLES'
 YAML.load(ENV['ROLES']).each do |role|
-  Role.find_or_create_by_name({ :name => role }, :without_protection => true)
+  Role.find_or_create_by_name({ name: role }, without_protection: true)
   puts 'role: ' << role
 end
 FILE
       end
       ## Fix db seed for Rails 4.0
-      gsub_file 'db/seeds.rb', /{ :name => role }, :without_protection => true/, 'role' if rails_4?
+      gsub_file 'db/seeds.rb', /{ name: role }, without_protection: true/, 'role' if rails_4?
     else
       append_file 'db/seeds.rb' do <<-FILE
 puts 'ROLES'
 YAML.load(ENV['ROLES']).each do |role|
-  Role.mongo_session['roles'].insert({ :name => role })
+  Role.mongo_session['roles'].insert({ name: role })
   puts 'role: ' << role
 end
 FILE
@@ -2457,7 +2457,7 @@ FILE
   if (prefer :authentication, 'devise') and (not prefer :apps4, 'rails-devise') and (not rails_4_1?)
     append_file 'db/seeds.rb' do <<-FILE
 puts 'DEFAULT USERS'
-user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
+user = User.find_or_create_by_email name: ENV['ADMIN_NAME'].dup, email: ENV['ADMIN_EMAIL'].dup, password: ENV['ADMIN_PASSWORD'].dup, password_confirmation: ENV['ADMIN_PASSWORD'].dup
 puts 'user: ' << user.name
 FILE
     end
@@ -2467,7 +2467,7 @@ FILE
   ## DEVISE-CONFIRMABLE
   if (prefer :devise_modules, 'confirmable') || (prefer :devise_modules, 'invitable')
     if rails_4_1?
-      inject_into_file 'app/services/create_admin_service.rb', "        user.confirm!\n", :after => "user.password_confirmation = Rails.application.secrets.admin_password\n"
+      inject_into_file 'app/services/create_admin_service.rb', "        user.confirm!\n", after: "user.password_confirmation = Rails.application.secrets.admin_password\n"
     else
       append_file 'db/seeds.rb', "user.confirm!\n"
     end
@@ -2516,8 +2516,8 @@ FILE
     end
   end
   ### GIT ###
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: set up database"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: set up database"' if prefer :git, true
   ### FRONTEND (must run after database migrations) ###
   # generate Devise views with appropriate styling
   if prefer :authentication, 'devise'
@@ -2531,10 +2531,10 @@ FILE
   # create navigation links using the rails_layout gem
   generate 'layout:navigation -f'
   # replace with specialized navigation partials
-  copy_from_repo 'app/views/layouts/_navigation-subdomains_app.html.erb', :prefs => 'subdomains_app'
+  copy_from_repo 'app/views/layouts/_navigation-subdomains_app.html.erb', prefs: 'subdomains_app'
   ### GIT ###
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: navigation links"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: navigation links"' if prefer :git, true
 end # after_everything
 # >----------------------------- recipes/init.rb -----------------------------end<
 # >-------------------------- templates/recipe.erb ---------------------------end<
@@ -2570,89 +2570,89 @@ if prefer :railsapps, 'rails-prelaunch-signup'
     gsub_file 'config/routes.rb', /  #.*\n/, "\n"
     gsub_file 'config/routes.rb', /\n^\s*\n/, "\n"
     # GIT
-    git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: clean up starter app"' if prefer :git, true
+    git add: '-A' if prefer :git, true
+    git commit: '-qm "rails_apps_composer: clean up starter app"' if prefer :git, true
 
     # >-------------------------------[ Create a git branch ]--------------------------------<
     if prefer :git, true
       if prefer :prelaunch_branch, 'master'
         unless prefer :main_branch, 'none'
           say_wizard "renaming git branch 'master' to '#{prefs[:main_branch]}' for starter app"
-          git :branch => "-m master #{prefs[:main_branch]}"
-          git :checkout => "-b master"
+          git branch: "-m master #{prefs[:main_branch]}"
+          git checkout: "-b master"
         else
           say_wizard "creating prelaunch app on git branch 'master'"
         end
       else
         say_wizard "creating new git branch '#{prefs[:prelaunch_branch]}' for prelaunch app"
-        git :checkout => "-b #{prefs[:prelaunch_branch]}"
+        git checkout: "-b #{prefs[:prelaunch_branch]}"
       end
     end
 
     # >-------------------------------[ Models ]--------------------------------<
 
-    copy_from_repo 'app/models/user.rb', :repo => repo
+    copy_from_repo 'app/models/user.rb', repo: repo
 
     # >-------------------------------[ Init ]--------------------------------<
-    copy_from_repo 'config/application.yml', :repo => repo
+    copy_from_repo 'config/application.yml', repo: repo
     remove_file 'config/application.example.yml'
     copy_file destination_root + '/config/application.yml', destination_root + '/config/application.example.yml'
-    copy_from_repo 'db/seeds.rb', :repo => repo
+    copy_from_repo 'db/seeds.rb', repo: repo
     run 'bundle exec rake db:seed'
 
     # >-------------------------------[ Controllers ]--------------------------------<
 
-    copy_from_repo 'app/controllers/confirmations_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/home_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/registrations_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/users_controller.rb', :repo => repo
+    copy_from_repo 'app/controllers/confirmations_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/home_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/registrations_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/users_controller.rb', repo: repo
 
     # >-------------------------------[ Mailers ]--------------------------------<
 
     generate 'mailer UserMailer'
-    copy_from_repo 'spec/mailers/user_mailer_spec.rb', :repo => repo
-    copy_from_repo 'app/mailers/user_mailer.rb', :repo => repo
+    copy_from_repo 'spec/mailers/user_mailer_spec.rb', repo: repo
+    copy_from_repo 'app/mailers/user_mailer.rb', repo: repo
 
     # >-------------------------------[ Views ]--------------------------------<
 
-    copy_from_repo 'app/views/devise/confirmations/show.html.erb', :repo => repo
-    copy_from_repo 'app/views/devise/mailer/confirmation_instructions.html.erb', :repo => repo
-    copy_from_repo 'app/views/devise/registrations/_thankyou.html.erb', :repo => repo
-    copy_from_repo 'app/views/devise/registrations/new.html.erb', :repo => repo
-    copy_from_repo 'app/views/devise/shared/_links.html.erb', :repo => repo
-    copy_from_repo 'app/views/home/index.html.erb', :repo => repo
-    copy_from_repo 'app/views/user_mailer/welcome_email.html.erb', :repo => repo
-    copy_from_repo 'app/views/user_mailer/welcome_email.text.erb', :repo => repo
-    copy_from_repo 'app/views/users/index.html.erb', :repo => repo
-    copy_from_repo 'public/thankyou.html', :repo => repo
+    copy_from_repo 'app/views/devise/confirmations/show.html.erb', repo: repo
+    copy_from_repo 'app/views/devise/mailer/confirmation_instructions.html.erb', repo: repo
+    copy_from_repo 'app/views/devise/registrations/_thankyou.html.erb', repo: repo
+    copy_from_repo 'app/views/devise/registrations/new.html.erb', repo: repo
+    copy_from_repo 'app/views/devise/shared/_links.html.erb', repo: repo
+    copy_from_repo 'app/views/home/index.html.erb', repo: repo
+    copy_from_repo 'app/views/user_mailer/welcome_email.html.erb', repo: repo
+    copy_from_repo 'app/views/user_mailer/welcome_email.text.erb', repo: repo
+    copy_from_repo 'app/views/users/index.html.erb', repo: repo
+    copy_from_repo 'public/thankyou.html', repo: repo
 
     # >-------------------------------[ Routes ]--------------------------------<
 
-    copy_from_repo 'config/routes.rb', :repo => repo
+    copy_from_repo 'config/routes.rb', repo: repo
     ### CORRECT APPLICATION NAME ###
     gsub_file 'config/routes.rb', /^.*.routes.draw do/, "#{app_const}.routes.draw do"
 
     # >-------------------------------[ Assets ]--------------------------------<
 
-    copy_from_repo 'app/assets/javascripts/application.js', :repo => repo
-    copy_from_repo 'app/assets/stylesheets/application.css.scss', :repo => repo
+    copy_from_repo 'app/assets/javascripts/application.js', repo: repo
+    copy_from_repo 'app/assets/stylesheets/application.css.scss', repo: repo
 
     # >-------------------------------[ Cucumber ]--------------------------------<
     say_wizard "copying Cucumber scenarios from the rails-prelaunch-signup examples"
-    copy_from_repo 'features/admin/send_invitations.feature', :repo => repo
-    copy_from_repo 'features/admin/view_progress.feature', :repo => repo
-    copy_from_repo 'features/visitors/request_invitation.feature', :repo => repo
-    copy_from_repo 'features/users/sign_in.feature', :repo => repo
-    copy_from_repo 'features/users/sign_up.feature', :repo => repo
-    copy_from_repo 'features/users/user_show.feature', :repo => repo
-    copy_from_repo 'features/step_definitions/admin_steps.rb', :repo => repo
-    copy_from_repo 'features/step_definitions/user_steps.rb', :repo => repo
-    copy_from_repo 'features/step_definitions/visitor_steps.rb', :repo => repo
-    copy_from_repo 'config/locales/devise.en.yml', :repo => repo
+    copy_from_repo 'features/admin/send_invitations.feature', repo: repo
+    copy_from_repo 'features/admin/view_progress.feature', repo: repo
+    copy_from_repo 'features/visitors/request_invitation.feature', repo: repo
+    copy_from_repo 'features/users/sign_in.feature', repo: repo
+    copy_from_repo 'features/users/sign_up.feature', repo: repo
+    copy_from_repo 'features/users/user_show.feature', repo: repo
+    copy_from_repo 'features/step_definitions/admin_steps.rb', repo: repo
+    copy_from_repo 'features/step_definitions/user_steps.rb', repo: repo
+    copy_from_repo 'features/step_definitions/visitor_steps.rb', repo: repo
+    copy_from_repo 'config/locales/devise.en.yml', repo: repo
 
     ### GIT ###
-    git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: prelaunch app"' if prefer :git, true
+    git add: '-A' if prefer :git, true
+    git commit: '-qm "rails_apps_composer: prelaunch app"' if prefer :git, true
   end # after_bundler
 end # rails-prelaunch-signup
 # >-------------------------- recipes/prelaunch.rb ---------------------------end<
@@ -2689,8 +2689,8 @@ if prefer :railsapps, 'rails-stripe-membership-saas'
     gsub_file 'config/routes.rb', /  #.*\n/, "\n"
     gsub_file 'config/routes.rb', /\n^\s*\n/, "\n"
     # GIT
-    git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: clean up starter app"' if prefer :git, true
+    git add: '-A' if prefer :git, true
+    git commit: '-qm "rails_apps_composer: clean up starter app"' if prefer :git, true
 
     # >-------------------------------[ Migrations ]--------------------------------<
     generate 'migration AddStripeToUsers customer_id:string last_4_digits:string'
@@ -2698,76 +2698,76 @@ if prefer :railsapps, 'rails-stripe-membership-saas'
     run 'bundle exec rake db:migrate'
 
     # >-------------------------------[ Models ]--------------------------------<
-    copy_from_repo 'app/models/ability.rb', :repo => repo
-    copy_from_repo 'app/models/user.rb', :repo => repo
+    copy_from_repo 'app/models/ability.rb', repo: repo
+    copy_from_repo 'app/models/user.rb', repo: repo
 
     # >-------------------------------[ Init ]--------------------------------<
-    copy_from_repo 'config/application.yml', :repo => repo
+    copy_from_repo 'config/application.yml', repo: repo
     remove_file 'config/application.example.yml'
     copy_file destination_root + '/config/application.yml', destination_root + '/config/application.example.yml'
-    copy_from_repo 'db/seeds.rb', :repo => repo
-    copy_from_repo 'config/initializers/stripe.rb', :repo => repo
+    copy_from_repo 'db/seeds.rb', repo: repo
+    copy_from_repo 'config/initializers/stripe.rb', repo: repo
     run 'bundle exec rake db:seed'
 
     # >-------------------------------[ Controllers ]--------------------------------<
-    copy_from_repo 'app/controllers/home_controller.rb', :repo => repo
+    copy_from_repo 'app/controllers/home_controller.rb', repo: repo
     generate 'controller content silver gold platinum --skip-assets --skip-helper'
-    copy_from_repo 'app/controllers/content_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/registrations_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/application_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/users_controller.rb', :repo => repo
+    copy_from_repo 'app/controllers/content_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/registrations_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/application_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/users_controller.rb', repo: repo
 
     # >-------------------------------[ Mailers ]--------------------------------<
     generate 'mailer UserMailer'
-    copy_from_repo 'app/mailers/user_mailer.rb', :repo => repo
+    copy_from_repo 'app/mailers/user_mailer.rb', repo: repo
 
     # >-------------------------------[ Views ]--------------------------------<
-    copy_from_repo 'app/views/home/index.html.erb', :repo => repo
-    copy_from_repo 'app/views/layouts/_navigation.html.erb', :repo => repo
-    copy_from_repo 'app/views/devise/registrations/new.html.erb', :repo => repo
-    copy_from_repo 'app/views/devise/registrations/edit.html.erb', :repo => repo
-    copy_from_repo 'app/views/user_mailer/expire_email.html.erb', :repo => repo
-    copy_from_repo 'app/views/user_mailer/expire_email.text.erb', :repo => repo
+    copy_from_repo 'app/views/home/index.html.erb', repo: repo
+    copy_from_repo 'app/views/layouts/_navigation.html.erb', repo: repo
+    copy_from_repo 'app/views/devise/registrations/new.html.erb', repo: repo
+    copy_from_repo 'app/views/devise/registrations/edit.html.erb', repo: repo
+    copy_from_repo 'app/views/user_mailer/expire_email.html.erb', repo: repo
+    copy_from_repo 'app/views/user_mailer/expire_email.text.erb', repo: repo
 
     # >-------------------------------[ Routes ]--------------------------------<
-    copy_from_repo 'config/routes.rb', :repo => repo
+    copy_from_repo 'config/routes.rb', repo: repo
     ### CORRECT APPLICATION NAME ###
     gsub_file 'config/routes.rb', /^.*.routes.draw do/, "#{app_const}.routes.draw do"
 
     # >-------------------------------[ Assets ]--------------------------------<
-    copy_from_repo 'app/assets/javascripts/application.js', :repo => repo
-    copy_from_repo 'app/assets/javascripts/jquery.readyselector.js', :repo => repo
-    copy_from_repo 'app/assets/javascripts/jquery.externalscript.js', :repo => repo
-    copy_from_repo 'app/assets/javascripts/registrations.js', :repo => repo
-    copy_from_repo 'app/assets/stylesheets/application.css.scss', :repo => repo
-    copy_from_repo 'app/assets/stylesheets/pricing.css.scss', :repo => repo
+    copy_from_repo 'app/assets/javascripts/application.js', repo: repo
+    copy_from_repo 'app/assets/javascripts/jquery.readyselector.js', repo: repo
+    copy_from_repo 'app/assets/javascripts/jquery.externalscript.js', repo: repo
+    copy_from_repo 'app/assets/javascripts/registrations.js', repo: repo
+    copy_from_repo 'app/assets/stylesheets/application.css.scss', repo: repo
+    copy_from_repo 'app/assets/stylesheets/pricing.css.scss', repo: repo
 
     # >-------------------------------[ RSpec ]--------------------------------<
     say_wizard "copying RSpec tests from the rails-stripe-membership-saas examples"
-    copy_from_repo 'spec/factories/roles.rb', :repo => repo
-    copy_from_repo 'spec/models/user_spec.rb', :repo => repo
-    copy_from_repo 'spec/controllers/content_controller_spec.rb', :repo => repo
-    copy_from_repo 'spec/mailers/user_mailer_spec.rb', :repo => repo
-    copy_from_repo 'spec/stripe/stripe_config_spec.rb', :repo => repo
-    copy_from_repo 'spec/support/stripe_helper.rb', :repo => repo
-    copy_from_repo 'spec/support/fixtures/success.json', :repo => repo
+    copy_from_repo 'spec/factories/roles.rb', repo: repo
+    copy_from_repo 'spec/models/user_spec.rb', repo: repo
+    copy_from_repo 'spec/controllers/content_controller_spec.rb', repo: repo
+    copy_from_repo 'spec/mailers/user_mailer_spec.rb', repo: repo
+    copy_from_repo 'spec/stripe/stripe_config_spec.rb', repo: repo
+    copy_from_repo 'spec/support/stripe_helper.rb', repo: repo
+    copy_from_repo 'spec/support/fixtures/success.json', repo: repo
 
     # >-------------------------------[ Cucumber ]--------------------------------<
     say_wizard "copying Cucumber scenarios from the rails-stripe-membership-saas examples"
     remove_file 'features/users/user_show.feature'
-    copy_from_repo 'features/support/paths.rb', :repo => repo
-    copy_from_repo 'features/users/sign_in.feature', :repo => repo
-    copy_from_repo 'features/users/sign_up.feature', :repo => repo
-    copy_from_repo 'features/users/sign_up_with_stripe.feature', :repo => repo
-    copy_from_repo 'features/users/user_edit.feature', :repo => repo
-    copy_from_repo 'features/users/user_delete.feature', :repo => repo
-    copy_from_repo 'features/step_definitions/user_steps.rb', :repo => repo
-    copy_from_repo 'features/step_definitions/form_helper_steps.rb', :repo => repo
-    copy_from_repo 'config/locales/devise.en.yml', :repo => repo
+    copy_from_repo 'features/support/paths.rb', repo: repo
+    copy_from_repo 'features/users/sign_in.feature', repo: repo
+    copy_from_repo 'features/users/sign_up.feature', repo: repo
+    copy_from_repo 'features/users/sign_up_with_stripe.feature', repo: repo
+    copy_from_repo 'features/users/user_edit.feature', repo: repo
+    copy_from_repo 'features/users/user_delete.feature', repo: repo
+    copy_from_repo 'features/step_definitions/user_steps.rb', repo: repo
+    copy_from_repo 'features/step_definitions/form_helper_steps.rb', repo: repo
+    copy_from_repo 'config/locales/devise.en.yml', repo: repo
 
     ### GIT ###
-    git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: membership app"' if prefer :git, true
+    git add: '-A' if prefer :git, true
+    git commit: '-qm "rails_apps_composer: membership app"' if prefer :git, true
   end # after_bundler
 end # rails-stripe-membership-saas
 
@@ -2791,8 +2791,8 @@ if prefer :railsapps, 'rails-recurly-subscription-saas'
     gsub_file 'config/routes.rb', /  #.*\n/, "\n"
     gsub_file 'config/routes.rb', /\n^\s*\n/, "\n"
     # GIT
-    git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: clean up starter app"' if prefer :git, true
+    git add: '-A' if prefer :git, true
+    git commit: '-qm "rails_apps_composer: clean up starter app"' if prefer :git, true
 
     # >-------------------------------[ Migrations ]--------------------------------<
     generate 'migration AddRecurlyToUsers first_name:string last_name:string customer_id:string'
@@ -2800,76 +2800,76 @@ if prefer :railsapps, 'rails-recurly-subscription-saas'
     run 'bundle exec rake db:migrate'
 
     # >-------------------------------[ Models ]--------------------------------<
-    copy_from_repo 'app/models/ability.rb', :repo => repo
-    copy_from_repo 'app/models/user.rb', :repo => repo
+    copy_from_repo 'app/models/ability.rb', repo: repo
+    copy_from_repo 'app/models/user.rb', repo: repo
 
     # >-------------------------------[ Init ]--------------------------------<
-    copy_from_repo 'config/application.yml', :repo => repo
+    copy_from_repo 'config/application.yml', repo: repo
     remove_file 'config/application.example.yml'
     copy_file destination_root + '/config/application.yml', destination_root + '/config/application.example.yml'
-    copy_from_repo 'db/seeds.rb', :repo => repo
-    copy_from_repo 'config/initializers/recurly.rb', :repo => repo
+    copy_from_repo 'db/seeds.rb', repo: repo
+    copy_from_repo 'config/initializers/recurly.rb', repo: repo
     run 'bundle exec rake db:seed'
 
     # >-------------------------------[ Controllers ]--------------------------------<
-    copy_from_repo 'app/controllers/home_controller.rb', :repo => repo
+    copy_from_repo 'app/controllers/home_controller.rb', repo: repo
     generate 'controller content silver gold platinum --skip-assets --skip-helper'
-    copy_from_repo 'app/controllers/content_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/registrations_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/application_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/users_controller.rb', :repo => repo
-    copy_from_repo 'app/controllers/recurly_controller.rb', :repo => repo
+    copy_from_repo 'app/controllers/content_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/registrations_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/application_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/users_controller.rb', repo: repo
+    copy_from_repo 'app/controllers/recurly_controller.rb', repo: repo
 
     # >-------------------------------[ Mailers ]--------------------------------<
     generate 'mailer UserMailer'
-    copy_from_repo 'app/mailers/user_mailer.rb', :repo => repo
+    copy_from_repo 'app/mailers/user_mailer.rb', repo: repo
 
     # >-------------------------------[ Views ]--------------------------------<
-    copy_from_repo 'app/views/home/index.html.erb', :repo => repo
-    copy_from_repo 'app/views/layouts/_navigation.html.erb', :repo => repo
-    copy_from_repo 'app/views/devise/registrations/new.html.erb', :repo => repo
-    copy_from_repo 'app/views/devise/registrations/edit.html.erb', :repo => repo
-    copy_from_repo 'app/views/user_mailer/expire_email.html.erb', :repo => repo
-    copy_from_repo 'app/views/user_mailer/expire_email.text.erb', :repo => repo
+    copy_from_repo 'app/views/home/index.html.erb', repo: repo
+    copy_from_repo 'app/views/layouts/_navigation.html.erb', repo: repo
+    copy_from_repo 'app/views/devise/registrations/new.html.erb', repo: repo
+    copy_from_repo 'app/views/devise/registrations/edit.html.erb', repo: repo
+    copy_from_repo 'app/views/user_mailer/expire_email.html.erb', repo: repo
+    copy_from_repo 'app/views/user_mailer/expire_email.text.erb', repo: repo
 
     # >-------------------------------[ Routes ]--------------------------------<
-    copy_from_repo 'config/routes.rb', :repo => repo
+    copy_from_repo 'config/routes.rb', repo: repo
     ### CORRECT APPLICATION NAME ###
     gsub_file 'config/routes.rb', /^.*.routes.draw do/, "#{app_const}.routes.draw do"
 
     # >-------------------------------[ Assets ]--------------------------------<
-    copy_from_repo 'app/assets/javascripts/application.js', :repo => repo
-    copy_from_repo 'app/assets/javascripts/jquery.readyselector.js', :repo => repo
-    copy_from_repo 'app/assets/javascripts/recurly.js', :repo => repo
-    copy_from_repo 'app/assets/javascripts/registrations.js', :repo => repo
-    copy_from_repo 'app/assets/stylesheets/application.css.scss', :repo => repo
-    copy_from_repo 'app/assets/stylesheets/pricing.css.scss', :repo => repo
+    copy_from_repo 'app/assets/javascripts/application.js', repo: repo
+    copy_from_repo 'app/assets/javascripts/jquery.readyselector.js', repo: repo
+    copy_from_repo 'app/assets/javascripts/recurly.js', repo: repo
+    copy_from_repo 'app/assets/javascripts/registrations.js', repo: repo
+    copy_from_repo 'app/assets/stylesheets/application.css.scss', repo: repo
+    copy_from_repo 'app/assets/stylesheets/pricing.css.scss', repo: repo
 
     # >-------------------------------[ RSpec ]--------------------------------<
     say_wizard "copying RSpec tests from the rails-recurly-subscription-saas examples"
-    copy_from_repo 'spec/factories/roles.rb', :repo => repo
-    copy_from_repo 'spec/factories/users.rb', :repo => repo
-    copy_from_repo 'spec/models/user_spec.rb', :repo => repo
-    copy_from_repo 'spec/controllers/content_controller_spec.rb', :repo => repo
-    copy_from_repo 'spec/mailers/user_mailer_spec.rb', :repo => repo
-    copy_from_repo 'spec/recurly/recurly_config_spec.rb', :repo => repo
+    copy_from_repo 'spec/factories/roles.rb', repo: repo
+    copy_from_repo 'spec/factories/users.rb', repo: repo
+    copy_from_repo 'spec/models/user_spec.rb', repo: repo
+    copy_from_repo 'spec/controllers/content_controller_spec.rb', repo: repo
+    copy_from_repo 'spec/mailers/user_mailer_spec.rb', repo: repo
+    copy_from_repo 'spec/recurly/recurly_config_spec.rb', repo: repo
 
     # >-------------------------------[ Cucumber ]--------------------------------<
     say_wizard "copying Cucumber scenarios from the rails-recurly-subscription-saas examples"
     remove_file 'features/users/user_show.feature'
-    copy_from_repo 'features/support/paths.rb', :repo => repo
-    copy_from_repo 'features/users/sign_in.feature', :repo => repo
-    copy_from_repo 'features/users/sign_up.feature', :repo => repo
-    copy_from_repo 'features/users/sign_up_with_recurly.feature', :repo => repo
-    copy_from_repo 'features/users/user_edit.feature', :repo => repo
-    copy_from_repo 'features/users/user_delete.feature', :repo => repo
-    copy_from_repo 'features/step_definitions/user_steps.rb', :repo => repo
-    copy_from_repo 'features/step_definitions/form_helper_steps.rb', :repo => repo
-    copy_from_repo 'config/locales/devise.en.yml', :repo => repo
+    copy_from_repo 'features/support/paths.rb', repo: repo
+    copy_from_repo 'features/users/sign_in.feature', repo: repo
+    copy_from_repo 'features/users/sign_up.feature', repo: repo
+    copy_from_repo 'features/users/sign_up_with_recurly.feature', repo: repo
+    copy_from_repo 'features/users/user_edit.feature', repo: repo
+    copy_from_repo 'features/users/user_delete.feature', repo: repo
+    copy_from_repo 'features/step_definitions/user_steps.rb', repo: repo
+    copy_from_repo 'features/step_definitions/form_helper_steps.rb', repo: repo
+    copy_from_repo 'config/locales/devise.en.yml', repo: repo
 
     ### GIT ###
-    git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: membership app"' if prefer :git, true
+    git add: '-A' if prefer :git, true
+    git commit: '-qm "rails_apps_composer: membership app"' if prefer :git, true
   end # after_bundler
 end # rails-recurly-subscription-saas
 # >-------------------------- recipes/prelaunch.rb ---------------------------end<
@@ -2964,7 +2964,7 @@ if config['quiet_assets']
 end
 if prefs[:quiet_assets]
   say_wizard "recipe setting quiet_assets for reduced asset pipeline logging"
-  add_gem 'quiet_assets', :group => :development
+  add_gem 'quiet_assets', group: :development
 end
 
 ## LOCAL_ENV.YML FILE
@@ -2979,13 +2979,13 @@ end
 if prefer :local_env_file, 'figaro'
   say_wizard "recipe creating application.yml file for environment variables with figaro"
   if rails_4_1?
-    add_gem 'figaro', :github => 'laserlemon/figaro'
+    add_gem 'figaro', github: 'laserlemon/figaro'
   else
     add_gem 'figaro'
   end
 elsif prefer :local_env_file, 'foreman'
   say_wizard "recipe creating .env file for development environment variables with foreman"
-  add_gem 'foreman', :group => :development
+  add_gem 'foreman', group: :development
 end
 
 ## BETTER ERRORS
@@ -2994,15 +2994,15 @@ if config['better_errors']
 end
 if prefs[:better_errors]
   say_wizard "recipe adding better_errors gem"
-  add_gem 'better_errors', :group => :development
+  add_gem 'better_errors', group: :development
   if RUBY_ENGINE == 'ruby'
     case RUBY_VERSION.split('.')[0] + "." + RUBY_VERSION.split('.')[1]
       when '2.1'
-        add_gem 'binding_of_caller', :group => :development, :platforms => [:mri_21]
+        add_gem 'binding_of_caller', group: :development, platforms: [:mri_21]
       when '2.0'
-        add_gem 'binding_of_caller', :group => :development, :platforms => [:mri_20]
+        add_gem 'binding_of_caller', group: :development, platforms: [:mri_20]
       when '1.9'
-        add_gem 'binding_of_caller', :group => :development, :platforms => [:mri_19]
+        add_gem 'binding_of_caller', group: :development, platforms: [:mri_19]
     end
   end
 end
@@ -3013,8 +3013,8 @@ if config['pry']
 end
 if prefs[:pry]
   say_wizard "recipe adding pry-rails gem"
-  add_gem 'pry-rails', :group => [:development, :test]
-  add_gem 'pry-rescue', :group => [:development, :test]
+  add_gem 'pry-rails', group: [:development, :test]
+  add_gem 'pry-rescue', group: [:development, :test]
 end
 
 ## BAN SPIDERS
@@ -3035,7 +3035,7 @@ case RbConfig::CONFIG['host_os']
     prefs[:jsruntime] = yes_wizard? "Add 'therubyracer' JavaScript runtime (for Linux users without node.js)?" unless prefs.has_key? :jsruntime
     if prefs[:jsruntime]
       say_wizard "recipe adding 'therubyracer' JavaScript runtime gem"
-      add_gem 'therubyracer', :platform => :ruby
+      add_gem 'therubyracer', platform: :ruby
     end
 end
 
@@ -3062,8 +3062,8 @@ after_everything do
   gsub_file 'config/routes.rb', /  #.*\n/, "\n"
   gsub_file 'config/routes.rb', /\n^\s*\n/, "\n"
   # GIT
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: extras"' if prefer :git, true
+  git add: '-A' if prefer :git, true
+  git commit: '-qm "rails_apps_composer: extras"' if prefer :git, true
 end
 
 ## GITHUB
@@ -3071,7 +3071,7 @@ if config['github']
   prefs[:github] = true
 end
 if prefs[:github]
-  add_gem 'hub', :require => nil, :group => [:development]
+  add_gem 'hub', require: nil, group: [:development]
   after_everything do
     say_wizard "recipe creating GitHub repository"
     git_uri = `git config remote.origin.url`.strip
